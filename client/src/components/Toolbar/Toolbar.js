@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 //Own pages
 import Home from '../Home/Home';
+import Programming from '../Programming/Programming';
 
 //CSS
 import './Toolbar.css';
@@ -25,7 +26,7 @@ function Toolbar() {
                 </ul>
             </div>
             <Route exact path="/" component={Home} />
-            <Route path="/programming" component={Home} />
+            <Route path="/programming" component={Programming} />
             <Route path="/webfun" component={Home} />
         </div>
         </Router>

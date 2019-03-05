@@ -1,9 +1,15 @@
 .nav {
     width: 100%;
     display: block;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0);
+    padding-top: 50px;
+    padding-left: 300px;
 }
 .nav .home {
     float: left;
+    padding-right: 10px;
 }
 .nav ul {
     list-style-type: none;
@@ -13,9 +19,15 @@
 }
 .nav ul li {
     display: inline;
-    padding: 20px;
+    padding: 10px;
+    transition: ease-in-out all 800ms;
+}
+.nav ul li:hover {
+    background-color: rgba(226, 226, 226, 0.3);
 }
 
 .nav a {
-    color: red;
+    color: white;
+    text-decoration: none;
+
 }
