@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 /*HEADER AND NAV*/
 .nav {
     position: relative;
@@ -18,11 +22,15 @@
 }
 
 /*MAIN CONTENT*/
-#id1 {
+#black {
     background-color: rgb(26, 25, 25);
     color: white;
-    margin: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
-#id1 h1 {
-    margin: 0;
+#white {
+    background-color: white;
+    color: black;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }

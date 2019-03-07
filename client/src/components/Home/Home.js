@@ -21,8 +21,11 @@ class Home extends Component {
                     <h1>Adiber</h1>
                 </div>
                 <div className="content">
-                    <div id="id1">
+                    <div id="black">
                         <h1>lala</h1>
+                    </div>
+                    <div id="white">
+                        <h1>Test2</h1>
                     </div>
                 </div>
             </div>
