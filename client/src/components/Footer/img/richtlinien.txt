@@ -1,0 +1,9 @@
+discord:
+	abstand überall: x
+twitter:
+	nix
+instagram:
+	abstand: halbe logo größe
+	min-size: 29px
+Github:
+	dont change dimensions

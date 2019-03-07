@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Srisakdi');
+
+/*FOOTER TOP*/
+.footer-top {
+    background-color: rgb(36, 38, 41);
+    height: 350px;
+    text-align: center;
+}
+
+.footer-top h3 {
+    color: white;
+    position: relative;
+    top: 100px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 100;
+    font-variant: small-caps;
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer-logos {
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.footer-top a {
+    padding: 0;
+    margin-left: 20px;
+}
+.footer-top a:first-child {
+    margin-left: 0;
+}
+
+.footer-top img {
+    height: 40px;
+}
+/*FOOTER BOTTOM*/
+
+.footer-bottom {
+    background-color: rgb(26, 25, 25);
+    height: 80px;
+}
