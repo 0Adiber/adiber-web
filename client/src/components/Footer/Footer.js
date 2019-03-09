@@ -16,10 +16,10 @@ class Footer extends Component {
                 <div className="footer-top">
                     <h3>Links</h3>
                     <div className="footer-logos">
-                        <a href="https://twitter.com/Aadiber" target="_blank"><img src={twitter} id="twitter" alt="Twitter" /></a>
-                        <a href="https://www.instagram.com/adib3r/" target="_blank"><img src={instagram} id="insta" alt="Twitter" /></a>
-                        <a href="https://discord.gg/7uFGcAE" target="_blank"><img src={discord} id="dc" alt="Twitter" /></a>
-                        <a href="https://github.com/0Adiber" target="_blank"><img src={github} id="git" alt="Twitter" /></a>
+                        <a href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer"><img src={twitter} id="twitter" alt="Twitter" /></a>
+                        <a href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer"><img src={instagram} id="insta" alt="Twitter" /></a>
+                        <a href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer"><img src={discord} id="dc" alt="Twitter" /></a>
+                        <a href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer"><img src={github} id="git" alt="Twitter" /></a>
                     </div>
                 </div>
                 <div className="footer-bottom">
