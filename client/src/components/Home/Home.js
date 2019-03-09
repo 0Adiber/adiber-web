@@ -18,7 +18,10 @@ class Home extends Component {
         return(
             <div>
                 <div className="header">
-                    <h1>Adiber</h1>
+                    <div className="text">
+                        <h1>Adiber</h1>
+                        <p>I am a self-teaching developer, who is studying Information Technology & <br /> trying a lot of things.</p>
+                    </div>
                 </div>
                 <div className="content">
                     <div id="black">

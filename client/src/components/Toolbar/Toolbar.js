@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import $ from 'jquery';
 
 //Own pages
 import Home from '../Home/Home';
@@ -9,14 +10,32 @@ import Programming from '../Programming/Programming';
 import './Toolbar.css';
 
 class Toolbar extends Component {
+    constructor(props){
+        $(document).bind("scroll", function() {
+            if($(document).scrollTop() >= 100) {
+                $(".nav").css('background-color', '#fff');
+                $(".nav").css('height', '25px');
+                $(".nav a").css('color', 'black');
+                $(".nav .cnt").css('line-height', '25px');
+            } else {
+                $(".nav").css('background-color', 'rgba(0,0,0,0)');
+                $(".nav").css('height', '100px');
+                $(".nav a").css('color', 'white');
+                $(".nav .cnt").css('line-height', '100px');
+            }
+        });
+        super();
+    }
     render() {
         return(
             <Router>
             <div>
                 <div className="nav">
+                <div className="cnt">
                     <div className="home">
                         <Link to="/">Adiber</Link>
                     </div>
+                    <div className="links">
                     <ul>
                         <li>
                             <Link to="/programming">Programming</Link>
@@ -25,6 +44,8 @@ class Toolbar extends Component {
                             <Link to="/webfun">Web-Fun</Link>
                         </li>
                     </ul>
+                    </div>
+                </div>
                 </div>
                 <Route exact path="/" component={Home} />
                 <Route path="/programming" component={Programming} />

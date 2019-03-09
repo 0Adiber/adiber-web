@@ -1,15 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .nav {
     width: 100%;
     display: block;
     position: fixed;
     top: 0;
     background-color: rgba(0,0,0,0);
-    padding-top: 50px;
-    padding-left: 300px;
+    padding: 20px;
+    height: 100px;
+    -webkit-transition: height ease-in-out 400ms;
+    transition: height ease-in-out 400ms;
+    -webkit-transition-delay: 50ms;
+            transition-delay: 50ms;
+}
+.nav .cnt {
+    line-height: 100px;
+    vertical-align: middle;
+    margin-left: 15%;
 }
 .nav .home {
     float: left;
     padding-right: 10px;
+    -webkit-transition: all ease-in-out 400ms;
+    transition: all ease-in-out 400ms;
+    -webkit-transition-delay: 50ms;
+            transition-delay: 50ms;
+    font-size: 17px;
+    margin-right: 20px;
+    font-variant: small-caps;
+}
+.nav .links {
+    -webkit-transition: all ease-in-out 400ms;
+    transition: all ease-in-out 400ms;
+    -webkit-transition-delay: 50ms;
+            transition-delay: 50ms;
 }
 .nav ul {
     list-style-type: none;
@@ -20,7 +44,8 @@
 .nav ul li {
     display: inline;
     padding: 10px;
-    transition: ease-in-out all 800ms;
+    font-size: 17px;
+    transition: background ease-in-out 600ms;
 }
 .nav ul li:hover {
     background-color: rgba(226, 226, 226, 0.3);
@@ -29,5 +54,5 @@
 .nav a {
     color: white;
     text-decoration: none;
-
+    font-family: 'Raleway', sans-serif;
 }
