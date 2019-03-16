@@ -10,6 +10,7 @@
     position: relative;
     z-index: 99;
 }
+
 .header {
     height: 100vh;
     width: 100%;
@@ -49,18 +50,4 @@
     position: relative;
     left: 0;
     display: block;
-}
-
-/*MAIN CONTENT*/
-#black {
-    background-color: rgb(26, 25, 25);
-    color: white;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-#white {
-    background-color: white;
-    color: black;
-    padding-top: 70px;
-    padding-bottom: 70px;
 }

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.wrapper-all {
+    padding-top: 100px;
+}
+
+.flex {
+    display: flex;
+}
+/*MAIN CONTENT*/
+.inner-content {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.inner-content h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 27px;
+    text-transform: uppercase;
+    padding-bottom: 60px;
+}
+
+.black {
+    background-color: rgb(26, 25, 25);
+    color: white;
+}
+.white {
+    background-color: white;
+    color: black;
+}
+
+.content-wrap-in {
+    max-width: 1000px;
+    margin: 0 auto;
+}

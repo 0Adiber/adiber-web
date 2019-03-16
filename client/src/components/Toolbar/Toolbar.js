@@ -8,9 +8,18 @@ import Programming from '../Programming/Programming';
 
 //CSS
 import './Toolbar.css';
+import './../_default/main.css';
+
+//Images
+import logo from './img/favicon.png';
 
 class Toolbar extends Component {
     constructor(props){
+        //set page title and logo
+        document.title = "Adiber";  
+        let favicon = document.querySelector('link[rel="shortcut icon"]');
+        favicon.setAttribute('href', logo);
+
         $(document).bind("scroll", function() {
             if($(document).scrollTop() >= 100) {
                 $(".nav").css('background-color', '#fff');

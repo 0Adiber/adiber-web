@@ -22,9 +22,6 @@ class Footer extends Component {
                         <a href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer"><img src={github} id="git" alt="Twitter" /></a>
                     </div>
                 </div>
-                <div className="footer-bottom">
-
-                </div>
             </div>
         );
     }
