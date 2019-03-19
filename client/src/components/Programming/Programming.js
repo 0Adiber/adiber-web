@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 //CSS
 import './Programming.css';
 
 class Programming extends Component {
+    componentDidMount() {
+        $(".nav a").css('color', 'black');
+    }
     render() {
         return(
             <div className="wrapper-all">

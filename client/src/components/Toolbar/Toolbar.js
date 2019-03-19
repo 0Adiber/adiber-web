@@ -5,6 +5,7 @@ import $ from 'jquery';
 //Own pages
 import Home from '../Home/Home';
 import Programming from '../Programming/Programming';
+import Webfun from '../WebFun/WebFun';
 
 //CSS
 import './Toolbar.css';
@@ -29,13 +30,15 @@ class Toolbar extends Component {
             } else {
                 $(".nav").css('background-color', 'rgba(0,0,0,0)');
                 $(".nav").css('height', '100px');
-                $(".nav a").css('color', 'white');
+                if(window.location.pathname === "/") {
+                    $(".nav a").css('color', 'white');
+                }
                 $(".nav .cnt").css('line-height', '100px');
             }
         });
-        console.log("ICH GBIN BEHIDNERTES REJACTJS");
         super();
     }
+
     render() {
         return(
             <Router>
@@ -59,7 +62,7 @@ class Toolbar extends Component {
                 </div>
                 <Route exact path="/" component={Home} />
                 <Route path="/programming" component={Programming} />
-                <Route path="/webfun" component={Home} />
+                <Route path="/webfun" component={Webfun} />
             </div>
             </Router>
         );
