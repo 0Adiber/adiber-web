@@ -11,6 +11,7 @@ class App extends Component {
     return (
       <div>
         <Toolbar />
+        dafuq you shouldn't see this!
         <Footer />
       </div>
     );

@@ -33,6 +33,7 @@ class Toolbar extends Component {
                 $(".nav .cnt").css('line-height', '100px');
             }
         });
+        console.log("ICH GBIN BEHIDNERTES REJACTJS");
         super();
     }
     render() {
