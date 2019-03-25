@@ -30,7 +30,7 @@ class Toolbar extends Component {
             } else {
                 $(".nav").css('background-color', 'rgba(0,0,0,0)');
                 $(".nav").css('height', '100px');
-                if(window.location.pathname === "/") {
+                if(window.location.pathname === "/" || window.location.pathname === "/programming") {
                     $(".nav a").css('color', 'white');
                 }
                 $(".nav .cnt").css('line-height', '100px');
