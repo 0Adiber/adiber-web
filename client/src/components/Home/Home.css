@@ -15,7 +15,7 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: -1;
+    z-index: 0;
     background-image: url('./img/bg1.jpg');
     background-size: cover;
     background-position: center;
@@ -50,4 +50,14 @@
     position: relative;
     text-align: center;
     display: block;
+}
+
+#more {
+    position: absolute;
+    color: red;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    cursor: pointer;
 }

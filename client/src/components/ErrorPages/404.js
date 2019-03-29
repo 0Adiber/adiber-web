@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 //CSS
-import './Webfun.css';
 
 class Programming extends Component {
     componentDidMount() {
@@ -13,6 +12,7 @@ class Programming extends Component {
         return(
             <div className="wrapper-all">
                 <div className="content">
+                    404 Not Found
                 </div>
             </div>
         );

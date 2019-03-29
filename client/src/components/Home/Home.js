@@ -7,14 +7,24 @@ import './Home.css';
 class Home extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'white');
+        $(window).scrollTop(0);
     }
+
+    scrollMore() {
+        console.log("hi");
+        $("html, body").animate({ scrollTop: window.innerHeight-65 }, 1000);
+    }
+
     render() {
         return(
             <div>
                 <div className="header">
                     <div className="text">
                         <h1>Adiber</h1>
-                        <p>I am a self-teaching developer, who is studying Information Technology & <br /> trying a lot of things.</p>
+                        <p>I am a young developer, who is also interested in Cyber Security & studying Information Technology.</p>
+                    </div>
+                    <div id="more" onClick={this.scrollMore}>
+                        <p>More</p>
                     </div>
                 </div>
                 <div className="content">
@@ -30,6 +40,21 @@ class Home extends Component {
                     <div className="inner-content white">
                         <div className="content-wrap-in">
                             <h3>NSA is watching you</h3>
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+                            <br />you
+
                         </div>
                     </div>
                 </div>

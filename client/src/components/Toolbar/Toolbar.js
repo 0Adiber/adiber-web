@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import $ from 'jquery';
 
 //Own pages
 import Home from '../Home/Home';
 import Programming from '../Programming/Programming';
 import Webfun from '../WebFun/WebFun';
+import NotFound from '../ErrorPages/404';
 
 //CSS
 import './Toolbar.css';
@@ -60,9 +61,12 @@ class Toolbar extends Component {
                     </div>
                 </div>
                 </div>
-                <Route exact path="/" component={Home} />
-                <Route path="/programming" component={Programming} />
-                <Route path="/webfun" component={Webfun} />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/programming" component={Programming} />
+                    <Route path="/webfun" component={Webfun} />
+                    <Route component={NotFound} />
+                </Switch>
             </div>
             </Router>
         );
