@@ -38,4 +38,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen('33333', function(){
+  console.log("listening");
+});
+
+
+//GITHUB 
+app.get('/github', function(req, res) {
+  res.send("github stuff");
+});
+
 module.exports = app;
