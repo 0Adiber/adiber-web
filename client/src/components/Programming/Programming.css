@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
 }
+
 .nav {
     position: relative;
     z-index: 99;
 }
+
 #header {
     height: 400px;
     width: 100%;
@@ -17,4 +19,31 @@
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+}
+
+#git-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#git-table td,
+#git-projects th {
+    border: 1px solid rgb(124, 122, 122);
+    padding: 7px;
+}
+
+#git-table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #fc773a;
+    color: white;
+}
+
+#git-table tr:nth-child(even) {
+    background-color: rgb(48, 46, 46);
+}
+
+#git-table tr:hover {
+    background-color: #f9a781;
 }

@@ -51,13 +51,16 @@ class Programming extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <ul>
+                <table id="git-table">
+                    <tr>
+                        <th>Name</th><th>Description</th><th>Created at</th><th>Last edit</th><th>Size(kb)</th>
+                    </tr>
                     {items.map(item => (
-                        <li key={item.name}>
-                            {item.name} {item.price}
-                        </li>
+                        <tr key={item.id}>
+                            <td>{item.name}</td> <td>{item.price}</td>
+                        </tr>
                     ))}
-                </ul>
+                </table>
             );
         }
     }
@@ -71,7 +74,7 @@ class Programming extends Component {
                     <div className="inner-content black">
                         <div className="content-wrap-in">
                             <h2>Github repositories</h2>
-                            <div>{ this.github() }</div>  
+                            <div id="git-projects">{ this.github() }</div>  
                         </div>
                     </div>
                     <div className="inner-content white">
