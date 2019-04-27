@@ -53,11 +53,12 @@ class Programming extends Component {
             return (
                 <table id="git-table">
                     <tr>
-                        <th>Name</th><th>Description</th><th>Created at</th><th>Last edit</th><th>Size(kb)</th>
+                        <th>Name</th><th>Description</th><th className="td-middle">Who?</th><th className="th-min td-middle">Created at</th><th className="th-min td-middle">Last edit</th><th className="td-middle">Size(kb)</th>
                     </tr>
                     {items.map(item => (
                         <tr key={item.id}>
-                            <td>{item.name}</td> <td>{item.price}</td>
+                            <td>{item.name}</td><td>{item.description}</td><td className="td-middle">{(item.owner.id === 44465736) ? "Me" : "Me & Friends"}</td>
+                            <td className="td-middle">{item.created_at.split("T")[0]}</td><td className="td-middle">{item.updated_at.split("T")[0]}</td><td className="td-middle">{item.size}</td>
                         </tr>
                     ))}
                 </table>

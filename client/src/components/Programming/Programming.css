@@ -45,5 +45,13 @@
 }
 
 #git-table tr:hover {
-    background-color: #f9a781;
+    background-color: #4c4c4c;
+}
+
+#git-table .td-middle {
+    text-align: center;
+}
+
+#git-table .th-min {
+    min-width: 90px;
 }
