@@ -24,7 +24,7 @@ class Programming extends Component {
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
         
-        fetch("http://localhost:33333/github", { method: "GET" })
+        fetch("http://themurli.net:33333/github", { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
