@@ -29,11 +29,27 @@ let gitItems = {
 }
 
 function fetchGithub() {
+  gitItems.items = [];
   fetch("https://api.github.com/users/0Adiber/repos?type=all", { method: "GET" })
   .then(res => res.json())
   .then(
     (result) => {
-      gitItems.items = result;
+      let gitTemp = {
+        temps: []
+      };
+      gitTemp.temps = result;
+      gitTemp.temps.map(t => {
+        gitItems.items.push({
+          id: t.id,
+          description: t.description,
+          owner: {
+            id: t.owner.id
+          },
+          created_at: t.created_at,
+          updated_at: t.updated_at,
+          size: t.size 
+        });
+      });
       console.log("Updated Github Repos Successfully!");
     },
     (error) => {
