@@ -55,3 +55,40 @@
 #git-table .th-min {
     min-width: 90px;
 }
+
+#git-table a {
+    color: white;
+}
+
+.programming-languages {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.programming-language-wrapper {
+    display: inline-table;
+    padding: 40px;
+    text-align: center;
+    transition: all ease-in-out 300ms;
+}
+
+.programming-language-wrapper:hover {
+    background-color: rgba(0,0,0,0.03)
+}
+
+.programming-language-icon {
+    display: block;
+    height: 200px;
+}
+
+.programming-language-icon img {
+    height: 200px;
+}
+
+.programming-language-text {
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    width: 200px;
+    height: 60px;
+    padding: 20px;
+}

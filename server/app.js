@@ -41,10 +41,13 @@ function fetchGithub() {
       gitTemp.temps.map(t => {
         gitItems.items.push({
           id: t.id,
+          name: t.name,
           description: t.description,
           owner: {
-            id: t.owner.id
+            id: t.owner.id,
+            user: t.owner.login
           },
+          url: t.html_url,
           created_at: t.created_at,
           updated_at: t.updated_at,
           size: t.size 

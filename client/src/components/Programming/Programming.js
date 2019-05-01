@@ -8,7 +8,9 @@ import './Programming.css';
 import bgs from './img/HeaderImg';
 
 //Images
+import csharpImg from './img/c#.png';
 import javaImg from './img/java.png';
+import cImg from './img/c.png';
 
 class Programming extends Component {
     constructor(props) {
@@ -27,7 +29,7 @@ class Programming extends Component {
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
         
-        fetch("http://themurli.net:33333/github", { method: "GET" })
+        fetch("http://themurli.net:33333/github", { method: "GET" })   //statt localhost: themurli.net
             .then(res => res.json())
             .then(
                 (result) => {
@@ -72,11 +74,11 @@ class Programming extends Component {
                 <table id="git-table">
                 <tbody>
                     <tr>
-                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Who?</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kb)</th>
+                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Owner?</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kb)</th>
                     </tr>
                     {items.map(item => (
                         <tr key={item.id}>
-                            <td>{item.name}</td><td>{item.description}</td><td className="td-middle rez-rem">{(item.owner.id === 44465736) ? "Me" : "Me & Friends"}</td>
+                            <td><a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a></td><td>{item.description}</td><td className="td-middle rez-rem">{item.owner.user}</td>
                             <td className="td-middle rez-rem">{item.created_at.split("T")[0]}</td><td className="td-middle rez-rem">{item.updated_at.split("T")[0]}</td><td className="td-middle">{item.size}</td>
                         </tr>
                     ))}
@@ -100,13 +102,31 @@ class Programming extends Component {
                     </div>
                     <div className="inner-content white">
                         <div className="content-wrap-in">
-                            <h2>At the moment I am working with</h2>
-                            <div className="programming-language-wrapper">
-                                <div className="programming-language-icon">
-                                    <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer"><img src={javaImg} alt="Java-Logo" /></a>
+                            <h2>Programming Languages I use</h2>
+                            <div id="programming-languages">
+                                <div className="programming-language-wrapper" id="programming-language-java">
+                                    <div className="programming-language-icon">
+                                        <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer"><img src={javaImg} alt="Java-Logo" /></a>
+                                    </div>
+                                    <div className="programming-language-text">
+                                        2018/19 (10th grade) we are primarily learning JAVA in school.
+                                    </div>
                                 </div>
-                                <div className="programming-language-text">
-                                    We are learning JAVA at school.
+                                <div className="programming-language-wrapper" id="programming-language-c#">
+                                    <div className="programming-language-icon">
+                                        <a href="https://docs.microsoft.com/de-de/dotnet/csharp/" target="_blank" rel="noopener noreferrer"><img src={csharpImg} alt="C#-Logo" /></a>
+                                    </div>
+                                    <div className="programming-language-text">
+                                        Using it for an optional subject called ALDA.
+                                    </div>
+                                </div>
+                                <div className="programming-language-wrapper" id="programming-language-c">
+                                    <div className="programming-language-icon">
+                                        <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" target="_blank" rel="noopener noreferrer"><img src={cImg} alt="C-Logo" /></a>
+                                    </div>
+                                    <div className="programming-language-text">
+                                        2017/18 (9th grade) we were learning C in school.
+                                    </div>
                                 </div>
                             </div>
                         </div>
