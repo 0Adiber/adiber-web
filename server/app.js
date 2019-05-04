@@ -104,7 +104,7 @@ app.post('/contact', function(req, res) {
     console.log("Successfully inserted new Contact Form!".green.underline);
   });
 
-  res.send("noise");
+  res.send("Received Contact Form");
 });
 
 /*

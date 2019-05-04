@@ -24,11 +24,14 @@ class Contact extends Component {
             },
             body: JSON.stringify({
                 user: {
-                    name: "John",
-                    email: "john@example.com"
+                    name: document.getElementById("inName").innerText,
+                    email: document.getElementById("inMail").innerText,
+                    message: document.getElementById("inMsg").innerText
                 }
             })
         });
+        //redirect to home
+        //say that form sent
     }
 
     render() {
@@ -38,9 +41,10 @@ class Contact extends Component {
                     <div id="wrap-this-shit">
                         <div className="content-wrap-in">
                             <form id="contact-form">
-                                <input type="text" name="name" required placeholder="Name"/>
-                                <input type="text" name="email" required placeholder="E-Mail"/>
-                                <input type="text" name="msg" required placeholder="Type your message here..."/>
+                                <input id="inName" type="text" name="name" required placeholder="Name"/>
+                                <input id="inMail" type="text" name="email" required placeholder="E-Mail"/>
+                                <textarea id="inMsg" type="text" name="msg" required placeholder="Type your message here..."/>
+                                <button name="submit" onclick={this.postForm}></button>
                             </form>
                         </div>
                     </div>
