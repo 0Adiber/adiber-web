@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.send("This is se backend")
+  res.send("Adibers Webpage backend!")
 });
 
 /*
@@ -86,8 +86,24 @@ module.exports = app;
 * CONTACT Start
 */
 
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded());
+
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+
+// handle request
 app.post('/contact', function(req, res) {
-  console.log(req.body);
+  console.log(`New Contact: ${req.body.user.name}`.random);
+
+  mysqlCon.query(`INSERT INTO contacts (name, email, message) VALUES ('${req.body.user.name}', '${req.body.user.email}', '${req.body.user.message}')`, function(err, result) {
+    if(err){
+      console.log("Can't insert into Contacts".red.bold)
+      throw err;
+    }
+    console.log("Successfully inserted new Contact Form!".green.underline);
+  });
+
   res.send("noise");
 });
 
@@ -96,22 +112,24 @@ app.post('/contact', function(req, res) {
 */
 
 
-//MYSQL
-function conToMysql() {
+/*
+* MYSQL Basic Start
+*/
 
+function conToMysql() {
   console.log("----------------------");
   console.log("MYSQL:".yellow.bold);
 
   const data = require('./_configs/mysql.json');
 
-  global.connection = mysql.createConnection({
+  global.mysqlCon = mysql.createConnection({
     host: data.host,
     user: data.username,
     passoword: data.passoword
   });
 
   //connect
-  connection.connect(function(err) {
+  mysqlCon.connect(function(err) {
     if(err){
       console.log("Can't connect to Database".red.bold)
       throw err;
@@ -119,7 +137,7 @@ function conToMysql() {
     console.log("Connected with MYSQL!".green.underline);
   });
   //create database
-  connection.query("CREATE DATABASE IF NOT EXISTS adiber_web", function(err, result) {
+  mysqlCon.query("CREATE DATABASE IF NOT EXISTS adiber_web", function(err, result) {
     if(err){
       console.log("Can't create Database".red.bold)
       throw err;
@@ -131,7 +149,7 @@ function conToMysql() {
     }
   });
   //select database
-  connection.query("USE adiber_web", function(err, result){
+  mysqlCon.query("USE adiber_web", function(err, result){
     if(err){
       console.log("Can't select Database".red.bold)
       throw err;
@@ -139,7 +157,7 @@ function conToMysql() {
     console.log("Selected Database 'adiber_web'".black.bgWhite);
   });
   //create table
-  connection.query("CREATE TABLE IF NOT EXISTS contacts (uid INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message VARCHAR(1023))", function(err, result) {
+  mysqlCon.query("CREATE TABLE IF NOT EXISTS contacts (uid INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message VARCHAR(1023))", function(err, result) {
     if(err){
       console.log("Can't create Table".red.bold)
       throw err;
@@ -152,3 +170,6 @@ function conToMysql() {
     console.log("----------------------")
   });
 }
+/*
+* MSQL OVER
+*/

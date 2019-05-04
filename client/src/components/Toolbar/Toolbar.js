@@ -6,6 +6,7 @@ import $ from 'jquery';
 import Home from '../Home/Home';
 import Programming from '../Programming/Programming';
 import Webfun from '../WebFun/WebFun';
+import Contact from '../Contact/Contact';
 import NotFound from '../ErrorPages/404';
 
 //CSS
@@ -60,11 +61,17 @@ class Toolbar extends Component {
                     </ul>
                     </div>
                 </div>
+                <div className="right">
+                    <div className="contact">
+                        <Link to="/contact">Contact</Link>
+                    </div>
+                </div>
                 </div>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/programming" component={Programming} />
                     <Route path="/webfun" component={Webfun} />
+                    <Route path="/contact" component={Contact} />
                     <Route component={NotFound} />
                 </Switch>
             </div>

@@ -4,7 +4,7 @@ import $ from 'jquery';
 //CSS
 import './Webfun.css';
 
-class Programming extends Component {
+class Webfun extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'black');
         $(window).scrollTop(0);
@@ -19,4 +19,4 @@ class Programming extends Component {
     }
 }
 
-export default Programming;
+export default Webfun;
