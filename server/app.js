@@ -99,12 +99,14 @@ app.post('/contact', function(req, res) {
   mysqlCon.query(`INSERT INTO contacts (name, email, message) VALUES ('${req.body.user.name}', '${req.body.user.email}', '${req.body.user.message}')`, function(err, result) {
     if(err){
       console.log("Can't insert into Contacts".red.bold)
-      throw err;
+      //throw err;
+      res.status(503).send("Database Error")
+      return;
     }
     console.log("Successfully inserted new Contact Form!".green.underline);
   });
 
-  res.send("Received Contact Form");
+  res.status(200).send("200 Contact Form Successfull");
 });
 
 /*
@@ -132,7 +134,8 @@ function conToMysql() {
   mysqlCon.connect(function(err) {
     if(err){
       console.log("Can't connect to Database".red.bold)
-      throw err;
+      //throw err;
+      return;
     }
     console.log("Connected with MYSQL!".green.underline);
   });
@@ -140,7 +143,8 @@ function conToMysql() {
   mysqlCon.query("CREATE DATABASE IF NOT EXISTS adiber_web", function(err, result) {
     if(err){
       console.log("Can't create Database".red.bold)
-      throw err;
+      //throw err;
+      return;
     }
     if(result.warningCount > 0){
       console.log("Webpage Database already exists!".black.bgWhite)
@@ -152,7 +156,8 @@ function conToMysql() {
   mysqlCon.query("USE adiber_web", function(err, result){
     if(err){
       console.log("Can't select Database".red.bold)
-      throw err;
+      //throw err;
+      return;
     }
     console.log("Selected Database 'adiber_web'".black.bgWhite);
   });
@@ -160,7 +165,8 @@ function conToMysql() {
   mysqlCon.query("CREATE TABLE IF NOT EXISTS contacts (uid INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message VARCHAR(1023))", function(err, result) {
     if(err){
       console.log("Can't create Table".red.bold)
-      throw err;
+      //throw err;
+      return;
     }
     if(result.warningCount > 0){
       console.log("Contacts Table exists!".black.bgWhite)

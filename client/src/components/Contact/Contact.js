@@ -17,7 +17,7 @@ class Contact extends Component {
     }
 
     postForm() {
-        fetch('/', {
+        fetch('http://localhost:33333/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,9 +29,17 @@ class Contact extends Component {
                     message: document.getElementById("inMsg").innerText
                 }
             })
+        }).then((response)=> {
+            if(response.status === 200) {
+                console.log("Success");
+                //redirect to home
+                //say that form sent
+            } else {
+                console.log("no Success")
+                //dont redirect to home
+                //say that form not sent
+            }
         });
-        //redirect to home
-        //say that form sent
     }
 
     render() {
@@ -40,12 +48,12 @@ class Contact extends Component {
                 <div className="inner-content" id="setThisBg">
                     <div id="wrap-this-shit">
                         <div className="content-wrap-in">
-                            <form id="contact-form">
+                            <div id="contact-form">
                                 <input id="inName" type="text" name="name" required placeholder="Name"/>
                                 <input id="inMail" type="text" name="email" required placeholder="E-Mail"/>
                                 <textarea id="inMsg" type="text" name="msg" required placeholder="Type your message here..."/>
-                                <button name="submit" onclick={this.postForm}></button>
-                            </form>
+                                <button name="submit" id="btnSub" onClick={this.postForm}>Send</button>
+                            </div>
                         </div>
                     </div>
                 </div>

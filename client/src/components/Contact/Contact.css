@@ -9,5 +9,51 @@
 }
 
 #contact-form {
-    
+    width: calc(100% - 200px);
+    background-color: rgba(0,0,0,0.4);
+    padding: 100px;
+}
+
+#contact-form input {
+    display: block;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: 'Dosis', sans-serif;
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+    color: white;
+}
+
+#inMsg {
+    width: 90%;
+    height: 30vh;
+    display: block;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 16px;
+}
+
+#btnSub {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid white;
+    position: relative;
+    overflow: hidden;;
+}
+
+#btnSub:hover {
+    cursor: pointer;
 }
