@@ -19,13 +19,14 @@
     margin: 20px 0;
     padding: 20px;
     background-color: rgba(0,0,0,0);
-    border-radius: 5px;
-    border: 1px solid white;
+    border: none;
+    border-bottom: 1px solid white;
     font-family: 'Dosis', sans-serif;
     width: 90%;
     max-width: 300px;
     font-size: 16px;
     color: white;
+    outline: none;
 }
 
 #inMsg {
@@ -34,11 +35,16 @@
     display: block;
     background-color: rgba(0,0,0,0);
     color: white;
-    border: 1px solid white;
+    border: none;
     border-radius: 5px;
     margin-top: 20px;
     padding: 20px;
     font-size: 16px;
+    outline: none;
+}
+
+#contact-form textarea:focus, input:focus {
+    border-color: none !important;
 }
 
 #btnSub {

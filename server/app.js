@@ -113,7 +113,6 @@ app.post('/contact', function(req, res) {
 * CONTACT OVER
 */
 
-
 /*
 * MYSQL Basic Start
 */

@@ -46,26 +46,26 @@ class Toolbar extends Component {
             <Router>
             <div>
                 <div className="nav">
-                <div className="cnt">
-                    <div className="home">
-                        <Link to="/">Adiber</Link>
+                    <div className="cnt">
+                        <div className="home">
+                            <Link to="/">Adiber</Link>
+                        </div>
+                        <div className="left">
+                            <ul>
+                                <li>
+                                    <Link to="/programming">Programming</Link>
+                                </li>
+                                <li>
+                                    <Link to="/webfun">Web-Fun</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="right">
+                            <div className="contact">
+                                <Link to="/contact">Contact</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="links">
-                    <ul>
-                        <li>
-                            <Link to="/programming">Programming</Link>
-                        </li>
-                        <li>
-                            <Link to="/webfun">Web-Fun</Link>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div className="right">
-                    <div className="contact">
-                        <Link to="/contact">Contact</Link>
-                    </div>
-                </div>
                 </div>
                 <Switch>
                     <Route exact path="/" component={Home} />

@@ -9,12 +9,13 @@
     -webkit-transition: height ease-in-out 400ms;
     transition: height ease-in-out 400ms;
     -webkit-transition-delay: 50ms;
-            transition-delay: 50ms;
+    transition-delay: 50ms;
 }
 .nav .cnt {
     line-height: 100px;
     vertical-align: middle;
     margin-left: 15%;
+
 }
 .nav .home {
     float: left;
@@ -22,22 +23,15 @@
     -webkit-transition: all ease-in-out 400ms;
     transition: all ease-in-out 400ms;
     -webkit-transition-delay: 50ms;
-            transition-delay: 50ms;
+    transition-delay: 50ms;
     font-size: 17px;
     margin-right: 20px;
     font-variant: small-caps;
-}
-.nav .links {
-    -webkit-transition: all ease-in-out 400ms;
-    transition: all ease-in-out 400ms;
-    -webkit-transition-delay: 50ms;
-            transition-delay: 50ms;
 }
 .nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 .nav ul li {
     display: inline;
@@ -53,4 +47,20 @@
     color: white;
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
+}
+.nav .left {
+    float: left;
+    -webkit-transition: all ease-in-out 400ms;
+    transition: all ease-in-out 400ms;
+    -webkit-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+
+.nav .right {
+    position: absolute;
+    left: 85%;
+    -webkit-transition: all ease-in-out 400ms;
+    transition: all ease-in-out 400ms;
+    -webkit-transition-delay: 50ms;
+    transition-delay: 50ms;
 }
