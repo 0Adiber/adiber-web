@@ -100,13 +100,12 @@ app.post('/contact', function(req, res) {
     if(err){
       console.log("Can't insert into Contacts".red.bold)
       //throw err;
-      res.status(503).send("Database Error")
-      return;
+      res.status(503).end("Database Error");
+    } else {
+      console.log("Successfully inserted new Contact Form!".green.underline);
+      res.status(200).end("Contact Form Successfull");
     }
-    console.log("Successfully inserted new Contact Form!".green.underline);
   });
-
-  res.status(200).send("200 Contact Form Successfull");
 });
 
 /*
