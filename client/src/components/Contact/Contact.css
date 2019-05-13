@@ -12,15 +12,15 @@
     width: calc(100% - 200px);
     background-color: rgba(0,0,0,0.4);
     padding: 100px;
+    height: 50vh;
 }
 
 #contact-form input {
     display: block;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 0;
+    padding: 7px;
     background-color: rgba(0,0,0,0);
     border: none;
-    border-bottom: 1px solid white;
     font-family: 'Dosis', sans-serif;
     width: 90%;
     max-width: 300px;
@@ -31,16 +31,17 @@
 
 #inMsg {
     width: 90%;
-    height: 30vh;
+    height: 30%;
     display: block;
     background-color: rgba(0,0,0,0);
     color: white;
-    border: none;
+    border: 1px solid white;
     border-radius: 5px;
     margin-top: 20px;
-    padding: 20px;
+    padding: 7px;
     font-size: 16px;
     outline: none;
+    resize: none;
 }
 
 #contact-form textarea:focus, input:focus {
@@ -62,4 +63,13 @@
 
 #btnSub:hover {
     cursor: pointer;
+}
+
+#contact-form .line {
+    display: block;
+    border: 1px solid white;
+    position: relative;
+    width: 90%;
+    max-width: 340px;
+    margin-bottom: 40px;
 }

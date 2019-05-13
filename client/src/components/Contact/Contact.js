@@ -49,8 +49,8 @@ class Contact extends Component {
                     <div id="wrap-this-shit">
                         <div className="content-wrap-in">
                             <div id="contact-form">
-                                <input id="inName" type="text" name="name" required placeholder="Name"/>
-                                <input id="inMail" type="text" name="email" required placeholder="E-Mail"/>
+                                <input id="inName" type="text" name="name" required placeholder="Name"/><span className="line"></span>
+                                <input id="inMail" type="text" name="email" required placeholder="E-Mail"/><span className="line"></span>
                                 <textarea id="inMsg" type="text" name="msg" required placeholder="Type your message here..."/>
                                 <button name="submit" id="btnSub" onClick={this.postForm}>Send</button>
                             </div>
