@@ -31,6 +31,7 @@ class Contact extends Component {
             if(response.status === 200) {
                 console.log("Success");
                 //redirect to home
+                window.location.pathname = "/";
                 //say that form sent
             } else {
                 console.log("no Success")
