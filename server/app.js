@@ -119,8 +119,9 @@ app.post('/contact', function(req, res) {
 function conToMysql() {
   console.log("----------------------");
   console.log("MYSQL:".yellow.bold);
-  console.log("Host: " + data.host + "\nUser:" + data.username)
+  
   const data = require('./_configs/mysql.json');
+  console.log("Host: " + data.host + "\nUser:" + data.username)
 
   global.mysqlCon = mysql.createConnection({
     host: data.host,
