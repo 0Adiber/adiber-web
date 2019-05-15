@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "updateC": "cd client && npm install",
-    "updateS": "cd client && npm install",
+    "updateS": "cd server && npm install",
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "update": "\"npm run updateC\" \"npm run updateS\"",
