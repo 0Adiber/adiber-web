@@ -12,6 +12,9 @@ import csharpImg from './img/c#.png';
 import javaImg from './img/java.png';
 import cImg from './img/c.png';
 
+//configs
+var HOST = require('../_configs/host.json');
+
 class Programming extends Component {
     constructor(props) {
         super(props);
@@ -28,8 +31,8 @@ class Programming extends Component {
 
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
-        
-        fetch("http://themurli.net:33333/github", { method: "GET" })   //statt localhost: themurli.net
+
+        fetch(`http://${HOST.host}:33333/github`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {

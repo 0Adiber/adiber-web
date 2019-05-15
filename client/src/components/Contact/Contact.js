@@ -3,7 +3,9 @@ import $ from 'jquery';
 
 //CSS
 import './Contact.css';
-//Background images
+
+//configs
+var HOST = require('../_configs/host.json');
 
 class Contact extends Component {
     componentDidMount() {
@@ -13,7 +15,7 @@ class Contact extends Component {
     }
 
     postForm() {
-        fetch('http://localhost:33333/contact', {
+        fetch(`http://${HOST.host}:33333/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
