@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "updateC": "cd client && npm install",
+    "updateS": "cd client && npm install",
     "client": "cd client && npm start",
     "server": "cd server && npm start",
+    "update": "\"npm run updateC\" \"npm run updateS\"",
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "keywords": [],
