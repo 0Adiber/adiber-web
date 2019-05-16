@@ -98,3 +98,16 @@
     50%{background-position:7% 100%}
     100%{background-position:94% 0%}
 }
+
+#notify {
+    max-width: 300px;
+    height: 100px;
+    width: 80%;
+    background-color: blue;
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    left: 100%;
+    top: 100vh;
+    transform: translate(-100%,-100%)
+}

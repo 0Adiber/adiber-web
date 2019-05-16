@@ -7,6 +7,10 @@ import './Contact.css';
 //configs
 var HOST = require('../_configs/host.json');
 
+function showNotification(msg) {
+    document.querySelector("#notify").innerHTML = msg;
+}
+
 class Contact extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'white');
@@ -32,13 +36,16 @@ class Contact extends Component {
             console.log(response.status);
             if(response.status === 200) {
                 console.log("Success");
-                //redirect to home
-                window.location.pathname = "/";
                 //say that form sent
+                showNotification("Success!");
+                //redirect to home
+                    //window.location.pathname = "/";
+                
             } else {
                 console.log("no Success")
                 //dont redirect to home
                 //say that form not sent
+                showNotification("no Success!");
             }
         });
     }
@@ -58,6 +65,7 @@ class Contact extends Component {
                             </div>
                         </div>
                     </div>
+                    <div id="notify"></div>
                 </div>
             </div>
         );
