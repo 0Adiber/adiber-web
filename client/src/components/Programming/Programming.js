@@ -100,7 +100,9 @@ class Programming extends Component {
                     <div className="inner-content black">
                         <div className="content-wrap-in">
                             <h2>Github repositories</h2>
-                            <div id="git-projects">{this.github()}</div>  
+                            <h3>Own/&Friend's</h3>
+                            <div id="git-projects">{this.github()}</div>
+                            <h3>Organisation: Alda-DHIF17</h3>
                         </div>
                     </div>
                     <div className="inner-content white">

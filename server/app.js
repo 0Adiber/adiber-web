@@ -161,7 +161,7 @@ function conToMysql() {
     console.log("Selected Database 'adiber_web'".black.bgWhite);
   });
   //create table
-  mysqlCon.query("CREATE TABLE IF NOT EXISTS contacts (uid INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message VARCHAR(1023))", function(err, result) {
+  mysqlCon.query("CREATE TABLE IF NOT EXISTS contacts (uid INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message VARCHAR(2048))", function(err, result) {
     if(err){
       console.log("Can't create Table".red.bold)
       //throw err;
