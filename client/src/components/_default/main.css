@@ -21,6 +21,13 @@
     padding-bottom: 60px;
 }
 
+.inner-content h3 {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
 .black {
     background-color: rgb(26, 25, 25);
     color: white;
@@ -34,4 +41,8 @@
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.inner-section {
+    padding-bottom: 50px;
 }

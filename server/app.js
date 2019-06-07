@@ -12,7 +12,8 @@ app.listen('33333', function(){
   //mysql connection
   conToMysql();
   //first github get req
-  fetchGithub();
+  fetchGithubOwn();
+  fetchGithubAlda();
 });
 
 app.use(function(req, res, next) {
@@ -28,12 +29,12 @@ app.get('/', function(req, res) {
 /*
 * GITHUB Start
 */
-let gitItems = {
+let gitItemsOwn = {
   items: []
 }
 
-function fetchGithub() {
-  gitItems.items = [];
+function fetchGithubOwn() {
+  gitItemsOwn.items = [];
   fetch("https://api.github.com/users/0Adiber/repos?type=all", { method: "GET" })
   .then(res => res.json())
   .then(
@@ -43,7 +44,7 @@ function fetchGithub() {
       };
       gitTemp.temps = result;
       gitTemp.temps.map(t => {
-        gitItems.items.push({
+        gitItemsOwn.items.push({
           id: t.id,
           name: t.name,
           description: t.description,
@@ -57,29 +58,83 @@ function fetchGithub() {
           size: t.size 
         });
       });
-      console.log("\nUpdated Github Repos Successfully!".random);
+      console.log("\nUpdated Github Repos Successfully!".red);
     },
     (error) => {
-      gitItems.items = {error: error.message}
-      console.log(gitItems)
+      gitItemsOwn.items = {error: error.message}
+      console.log(gitItemsOwn)
     }
   );
 }
 //update github every hour
 setInterval(() => {
-  fetchGithub();
+  fetchGithubOwn();
 }, 3600*1000); //== 1h
 
 
 //get
 app.get('/github', function(req, res) {
-  res.json(gitItems).end();
+  res.json(gitItemsOwn).end();
 });
-
-module.exports = app;
 
 /*
 * Github OVER
+*/
+
+/*
+* GITHUB ALDA
+*/
+
+let gitItemsAlda = {
+  items: []
+}
+
+function fetchGithubAlda() {
+  gitItemsAlda.items = [];
+  fetch("https://api.github.com/orgs/alda-dhif17/repos?type=all&direction=desc", { method: "GET" })
+  .then(res => res.json())
+  .then(
+    (result) => {
+      let gitTemp = {
+        temps: []
+      };
+      gitTemp.temps = result;
+      gitTemp.temps.map(t => {
+        gitItemsAlda.items.push({
+          id: t.id,
+          name: t.name,
+          description: t.description,
+          owner: {
+            id: t.owner.id,
+            user: t.owner.login
+          },
+          url: t.html_url,
+          created_at: t.created_at,
+          updated_at: t.updated_at,
+          size: t.size 
+        });
+      });
+      console.log("\nUpdated Github Alda Successfully!".blue);
+    },
+    (error) => {
+      gitItemsAlda.items = {error: error.message}
+      console.log(gitItemsAlda)
+    }
+  );
+}
+//update github alda every hour
+setInterval(() => {
+  fetchGithubAlda();
+}, 3600*1000); //== 1h
+
+
+//get
+app.get('/gitalda', function(req, res) {
+  res.json(gitItemsAlda).end();
+});
+
+/*
+* Gitbut alda OVER
 */
 
 /*
@@ -178,3 +233,6 @@ function conToMysql() {
 /*
 * MSQL OVER
 */
+
+
+module.exports = app;

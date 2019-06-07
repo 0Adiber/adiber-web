@@ -21,18 +21,18 @@
     padding: 0;
 }
 
-#git-table {
+.git-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#git-table td,
-#git-projects th {
+.git-table td,
+.git-projects th {
     border: 1px solid rgb(124, 122, 122);
     padding: 7px;
 }
 
-#git-table th {
+#git-table-own th {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
@@ -40,23 +40,31 @@
     color: white;
 }
 
-#git-table tr:nth-child(even) {
+#git-table-alda th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #1699cc;
+    color: white;
+}
+
+.git-table tr:nth-child(even) {
     background-color: rgb(48, 46, 46);
 }
 
-#git-table tr:hover {
+.git-table tr:hover {
     background-color: #4c4c4c;
 }
 
-#git-table .td-middle {
+.git-table .td-middle {
     text-align: center;
 }
 
-#git-table .th-min {
+.git-table .th-min {
     min-width: 90px;
 }
 
-#git-table a {
+.git-table a {
     color: white;
 }
 

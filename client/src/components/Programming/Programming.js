@@ -19,9 +19,16 @@ class Programming extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          error: null,
-          isLoaded: false,
-          items: []
+            gitOwn: {
+                error: null,
+                isLoaded: false,
+                items: [],
+            },
+            gitAlda: {
+                error: null,
+                isLoaded: false,
+                items: [],
+            },
         };
     }
     componentDidMount() {
@@ -32,22 +39,49 @@ class Programming extends Component {
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
 
+        //fetch github own
         fetch(`http://${HOST.host}:33333/github`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
-                        isLoaded: true,
-                        items: result.items
+                        gitOwn: {
+                            isLoaded: true,
+                            items: result.items
+                        }
                     });
                 },
                 (error) => {
                     this.setState({
-                        isLoaded: true,
-                        error
+                        gitOwn: {
+                            isLoaded: true,
+                            error
+                        },
                     });
                 }
-            )
+            );
+
+        //fetch github alda
+        fetch(`http://${HOST.host}:33333/gitalda`, { method: "GET" })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        gitAlda: {
+                            isLoaded: true,
+                            items: result.items
+                        }
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        gitAlda: {
+                            isLoaded: true,
+                            error
+                        },
+                    });
+                }
+            );
 
         window.addEventListener('resize', this.resizeGithub);
     }
@@ -65,8 +99,8 @@ class Programming extends Component {
         }
     }
 
-    github() {
-        const {error, isLoaded, items} = this.state;
+    github(specific) {
+        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : this.state.gitAlda);
         if(error) {
             return <div>Error: { error.message }</div>
         } else if(!isLoaded) {
@@ -74,10 +108,10 @@ class Programming extends Component {
         } else {
             setTimeout(() => {this.resizeGithub()}, 30);
             return (
-                <table id="git-table">
+                <table className="git-table" id={"git-table-" + specific}>
                 <tbody>
                     <tr>
-                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Owner?</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kb)</th>
+                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Owner</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kB)</th>
                     </tr>
                     {items.map(item => (
                         <tr key={item.id}>
@@ -100,9 +134,14 @@ class Programming extends Component {
                     <div className="inner-content black">
                         <div className="content-wrap-in">
                             <h2>Github repositories</h2>
-                            <h3>Own/&Friend's</h3>
-                            <div id="git-projects">{this.github()}</div>
-                            <h3>Organisation: Alda-DHIF17</h3>
+                            <div className="inner-section">
+                                <h3>Own/&Friend's</h3>
+                                <div className="git-projects">{this.github("own")}</div>
+                            </div>
+                            <div className="inner-section">
+                                <h3>Organisation: Alda-DHIF17</h3>
+                                <div className="git-projects">{this.github("alda")}</div>
+                            </div>                            
                         </div>
                     </div>
                     <div className="inner-content white">
