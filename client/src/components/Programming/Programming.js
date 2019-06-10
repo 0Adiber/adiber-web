@@ -234,7 +234,7 @@ class Programming extends Component {
                                         <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer"><img src={nodejsImg} alt="NodeJS-Logo" /></a>
                                     </div>
                                     <div className="programming-language-text">
-                                        Nice, some server site JS - foundation for this website.
+                                        Nice, some server-side JS - which is the foundation for this website.
                                     </div>
                                 </div>
                                 <div className="programming-language-wrapper" id="programming-language-expressjs">
@@ -258,8 +258,8 @@ class Programming extends Component {
                     </div>
                     <div className="inner-content black">
                         <div className="content-wrap-in">
-                            <h2>Web-Fun</h2>
-                            <p>Web-Fun is just a neat name I came up with for things, that I programmed, but are unecessary or funny in some way.</p>
+                            <h2>Fuhn</h2>
+                            <p>This section is just about stuff I programmed, but which is completely unecessary (probably).</p>
                         </div>
                     </div>
                 </div>
