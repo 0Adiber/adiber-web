@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import $ from 'jquery';
 
 //Own pages
-import Home from '../Home/Home';
-import Programming from '../Programming/Programming';
-import Youtube from '../Youtube/Youtube';
-import Downloads from '../Downloads/Downloads';
-import Contact from '../Contact/Contact';
-import NotFound from '../ErrorPages/404';
+import Home from '../../pages/Home/Home';
+import Programming from '../../pages/Programming/Programming';
+import Youtube from '../../pages/Youtube/Youtube';
+import Downloads from '../../pages/Downloads/Downloads';
+import Contact from '../../pages/Contact/Contact';
+import NotFound from '../../pages/ErrorPages/404';
 
 //CSS
 import './Toolbar.css';
-import './../_default/main.css';
+import '../../styles/main.css';
 
 //Images
 import logo from './img/favicon.png';

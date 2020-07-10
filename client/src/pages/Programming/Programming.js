@@ -22,7 +22,7 @@ import nodejsImg from './img/nodejs.svg';
 import expressjsImg from './img/expressjs.svg';
 
 //configs
-var HOST = require('../_configs/host.json');
+var HOST = require('../../configs/host.json');
 
 class Programming extends Component {
     constructor(props) {
