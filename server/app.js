@@ -2,15 +2,15 @@ var express = require('express');
 var app = express();
 var colors = require('colors');
 
-var mysql = require('mysql');
+//var mysql = require('mysql');
 
 const fetch = require("node-fetch");
-const path = require("path");
+//const path = require("path");
 
 app.listen('33333', function(){
   console.log("Backend listening on Port: 33333".black.bgWhite);
   //mysql connection
-  conToMysql();
+  //conToMysql();
   //first github get req
   fetchGithubOwn();
   fetchGithubAlda();
@@ -35,7 +35,7 @@ let gitItemsOwn = {
 
 function fetchGithubOwn() {
   gitItemsOwn.items = [];
-  fetch("https://api.github.com/users/0Adiber/repos?type=all", { method: "GET" })
+  fetch("https://api.github.com/users/0Adiber/repos", { method: "GET" })
   .then(res => res.json())
   .then(
     (result) => {
@@ -43,6 +43,7 @@ function fetchGithubOwn() {
         temps: []
       };
       gitTemp.temps = result;
+      gitTemp.temps.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
       gitTemp.temps.map(t => {
         gitItemsOwn.items.push({
           id: t.id,
@@ -99,6 +100,7 @@ function fetchGithubAlda() {
         temps: []
       };
       gitTemp.temps = result;
+      gitTemp.temps.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
       gitTemp.temps.map(t => {
         gitItemsAlda.items.push({
           id: t.id,
@@ -137,10 +139,11 @@ app.get('/gitalda', function(req, res) {
 * Gitbut alda OVER
 */
 
+
 /*
 * CONTACT Start
 */
-
+/* not needed atm
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded());
 
@@ -170,7 +173,7 @@ app.post('/contact', function(req, res) {
 /*
 * MYSQL Basic Start
 */
-
+/* not needed atm
 function conToMysql() {
   console.log("----------------------");
   console.log("MYSQL:".yellow.bold);

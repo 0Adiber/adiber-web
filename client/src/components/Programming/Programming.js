@@ -144,7 +144,7 @@ class Programming extends Component {
                         <div className="content-wrap-in">
                             <h2>Github repositories</h2>
                             <div className="inner-section">
-                                <h3>Own/&Friend's</h3>
+                                <h3>My Public Github Repos</h3>
                                 <div className="git-projects">{this.github("own")}</div>
                             </div>
                             <div className="inner-section">
@@ -162,7 +162,7 @@ class Programming extends Component {
                                         <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer"><img src={javaImg} alt="Java-Logo" /></a>
                                     </div>
                                     <div className="programming-language-text">
-                                        2018/19 (10th grade) we are primarily learning JAVA in school.
+                                        At school we are primarily learning JAVA.
                                     </div>
                                 </div>
                                 <div className="programming-language-wrapper" id="programming-language-c#">

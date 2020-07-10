@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 //CSS
-import './Webfun.css';
+import './Downloads.css';
 
-class Webfun extends Component {
+class Downloads extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'black');
         $(window).scrollTop(0);
@@ -13,10 +13,11 @@ class Webfun extends Component {
         return(
             <div className="wrapper-all">
                 <div className="content">
+                    
                 </div>
             </div>
         );
     }
 }
 
-export default Webfun;
+export default Downloads;
