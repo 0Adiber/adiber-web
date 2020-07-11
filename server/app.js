@@ -14,6 +14,7 @@ app.listen('33333', function(){
   //first github get req
   fetchGithubOwn();
   fetchGithubAlda();
+  getDownloadPosts();
 });
 
 app.use(function(req, res, next) {
@@ -35,7 +36,7 @@ let gitItemsOwn = {
 
 function fetchGithubOwn() {
   gitItemsOwn.items = [];
-  fetch("https://api.github.com/users/0Adiber/repos", { method: "GET" })
+  fetch("https://api.github.com/users/0Adiber/repos?type=all", { method: "GET" })
   .then(res => res.json())
   .then(
     (result) => {
@@ -138,6 +139,23 @@ app.get('/gitalda', function(req, res) {
 /*
 * Gitbut alda OVER
 */
+
+/*
+* Posts START
+*/
+let downloadJson;
+//getting the downloads posts
+function getDownloadPosts() {
+  downloadJson = require('./res/downloads.json')
+}
+//update every hour
+setInterval(() => {
+  getDownloadPosts();
+}, 3600*1000) //== 1h
+//get
+app.get('/downloads', function(req, res) {
+  res.json(downloadJson).end()
+});
 
 
 /*

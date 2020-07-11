@@ -1,0 +1,14 @@
+{
+    "items" : [
+        {
+            "title": "LobbySigns",
+            "image": "https://www.chip.de/ii/1/2/8/4/2/4/1/8/minecraft-cd189705e207cc9d.jpg",
+            "file": "",
+            "version": 1.0,
+            "description": "Lets Players teleport between Server by clicking on a Sign.",
+            "api": "Spigot",
+            "github": "https://github.com/0Adiber/LobbySigns",
+            "docs": "https://www.spigotmc.org/resources/lobbysigns.80320/"
+        }
+    ]
+}
