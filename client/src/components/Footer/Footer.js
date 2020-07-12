@@ -7,12 +7,6 @@ import './Footer.css';
 import { faDiscord, faInstagram, faGithub, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-//Images
-import twitter from './img/twitter.png';
-import instagram from './img/instagram.png';
-import discord from './img/discord.png';
-import github from './img/github.png';
-
 class Footer extends Component {
     render(){
         return(

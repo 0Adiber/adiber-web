@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Hind');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap');
 
 * {
     margin: 0;
@@ -16,7 +16,7 @@
     width: 100%;
     position: relative;
     z-index: 0;
-    background-image: url('./img/bg1.jpg');
+    background-image: url('./img/bg2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,15 +35,14 @@
     width: 80%;
     height: 200px;
     color: #fff;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Caveat', cursive;
     text-shadow: 1px 1px black;
-    font-weight: 700;
     font-size: 30px;
     cursor: text;
 }
 
 .header .text h1 {
-    font-family: 'Hind', sans-serif;
+    font-family: 'Permanent Marker', cursive;
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 10px;
