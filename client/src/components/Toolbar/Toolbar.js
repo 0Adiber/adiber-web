@@ -48,26 +48,26 @@ class Toolbar extends Component {
             <div>
                 <div className="nav">
                     <div className="cnt">
-                        <div className="home">
-                            <Link to="/">Adiber</Link>
-                        </div>
+                    <Link to="/"><div className="home">
+                            Adiber
+                        </div></Link>
                         <div className="left">
                             <ul>
-                                <li>
-                                    <Link to="/programming">Programming</Link>
-                                </li>
-                                <li>
-                                    <Link to="/youtube">Youtube</Link>
-                                </li>
-                                <li>
-                                    <Link to="/downloads">Downloads</Link> 
-                                </li>
+                                <Link to="/programming"><li>
+                                    Programming
+                                </li></Link>
+                                <Link to="/youtube"><li>
+                                    Youtube
+                                </li></Link>
+                                <Link to="/downloads"><li>
+                                    Downloads
+                                </li></Link> 
                             </ul>
                         </div>
                         <div className="right">
-                            <div className="contact">
-                                <Link to="/contact">Contact</Link>
-                            </div>
+                        <Link to="/contact"><div className="contact">
+                                Contact
+                            </div></Link>
                         </div>
                     </div>
                 </div>

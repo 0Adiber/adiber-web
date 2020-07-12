@@ -1,0 +1,95 @@
+{
+    "items": [
+        {
+            "title": "Java",
+            "img": "./img/java.svg",
+            "alt": "Java-Logo",
+            "href": "https://www.oracle.com/java/",
+            "text": "At school we are primarily learning JAVA."
+        },
+        {
+            "title": "Csharp",
+            "href": "https://docs.microsoft.com/de-de/dotnet/csharp/",
+            "alt": "C#-Logo",
+            "text": "Using it for an optional subject called ALDA.",
+            "img": "./img/c#.png"
+        },
+        {
+            "title": "Cpp",
+            "href": "http://www.cplusplus.com/",
+            "alt": "Cpp-Logo",
+            "text": "Using it for an optional subject called ALDA.",
+            "img": "./img/cpp.svg"
+        },
+        {
+            "title": "C",
+            "href": "https://en.wikipedia.org/wiki/The_C_Programming_Language",
+            "alt": "C-Logo",
+            "text": "2017/18 (9th grade) we were learning C in school.",
+            "img": "./img/c.png"
+        },
+        {
+            "title": "Python",
+            "href": "https://www.python.org/",
+            "alt": "Python-Logo",
+            "text": "I am using Python for things like my Youtube Downloader or scripts to automate stuff.",
+            "img": "./img/python.svg"
+        },
+        {
+            "title": "HTML",
+            "href": "https://de.wikipedia.org/wiki/Hypertext_Markup_Language",
+            "alt": "HTML-Logo",
+            "text": "Though HTML is not a programming language, I still put it in this section!",
+            "img": "./img/html.svg"
+        },
+        {
+            "title": "CSS",
+            "href": "https://de.wikipedia.org/wiki/Cascading_Style_Sheets",
+            "alt": "CSS-Logo",
+            "text": "I am pretty!",
+            "img": "./img/css.svg"
+        },
+        {
+            "title": "JS",
+            "href": "https://de.wikipedia.org/wiki/JavaScript",
+            "alt": "JS-Logo",
+            "text": "Main component of this Website (together with some jQuery)",
+            "img": "./img/js.svg"
+        },
+        {
+            "title": "PHP",
+            "href": "https://www.php.net/",
+            "alt": "PHP-Logo",
+            "text": "I used to program some websites with PHP",
+            "img": "./img/php.svg"
+        },
+        {
+            "title": "NodeJS",
+            "href": "https://nodejs.org/",
+            "alt": "NodeJS-Logo",
+            "text": "Nice, some server-side JS - which is the foundation for this website.",
+            "img": "./img/nodejs.svg"
+        },
+        {
+            "title": "ExpressJS",
+            "href": "https://expressjs.com/",
+            "alt": "ExpressJS-Logo",
+            "text": "Framework I used for my backend..",
+            "img": "./img/expressjs.svg"
+        },
+        {
+            "title": "ReactJS",
+            "href": "https://reactjs.org/",
+            "alt": "ReactJS-Logo",
+            "text": "Absolutely awesome Framework I used for the Frontend of this page!",
+            "img": "./img/reactjs.svg"
+        },
+        {
+            "title": "GoLang",
+            "href": "https://golang.org/",
+            "alt": "GoLang-Logo",
+            "text": "This helped me create a RestAPI and an Autoclicker",
+            "img": "./img/go.png"
+        }
+    ]
+}

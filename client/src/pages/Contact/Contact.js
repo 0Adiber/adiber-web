@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+//Fontawesome
+import { faDiscord, faInstagram, faGithub} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 //CSS
 import './Contact.css';
 
 //Images
+/*
 import instagram from './img/instagram.png';
 import discord from './img/discord.png';
+import github from './img/github.png';*/
 
 class Contact extends Component {
     componentDidMount() {
@@ -21,13 +27,22 @@ class Contact extends Component {
                 <div className="inner-content" id="setThisBg">
                     <div id="wrap-this-shit">
                         <div className="content-wrap-in">
-                            <div className="contact-div">
-                                <a href="https://www.instagram.com/adib3r/" rel="noopener noreferrer" target="_blank"><img alt="Instagram" src={instagram} /></a>
-                                <span className="contact-big">Instagram</span><span className="contact-small">Wanna send me some memes? - way to go</span>
-                            </div>
-                            <div className="contact-div">
-                                <a href="https://discord.gg/7uFGcAE" rel="noopener noreferrer" target="_blank"><img alt="Discord" src={discord} /></a>
-                                <span className="contact-big">Discord</span><span className="contact-small">This is my official Discord-Server -&gt; use this to really contact me</span>
+                            <div className="content-flex">
+                                <div className="contact-div">
+                                    <a href="https://www.instagram.com/adib3r/" rel="noopener noreferrer" target="_blank">
+                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faInstagram} /></div></a>
+                                    <span className="contact-big">Instagram</span><span className="contact-small">@adib3r</span>
+                                </div>
+                                <div className="contact-div">
+                                    <a href="https://discord.gg/7uFGcAE" rel="noopener noreferrer" target="_blank">
+                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faDiscord} /></div></a>
+                                    <span className="contact-big">Discord</span><span className="contact-small">@MurliGmbH</span>
+                                </div>
+                                <div className="contact-div">
+                                    <a href="https://github.com/0Adiber" rel="noopener noreferrer" target="_blank">
+                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faGithub} /></div></a>
+                                    <span className="contact-big">Github</span><span className="contact-small">@0Adiber</span>
+                                </div>
                             </div>
                         </div>
                     </div>

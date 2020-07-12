@@ -91,6 +91,7 @@
 
 .programming-language-icon img {
     height: 200px;
+    max-width: 200px;
 }
 
 .programming-language-text {

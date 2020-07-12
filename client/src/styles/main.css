@@ -18,18 +18,30 @@
     letter-spacing: 5px;
     font-size: 27px;
     text-transform: uppercase;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 .inner-content h3 {
+    padding-top: 10px;
     font-family: "Raleway", sans-serif;
     letter-spacing: 1px;
     font-size: 20px;
     padding-bottom: 10px;
 }
 
+.inner-content a {
+    text-decoration: underline;
+    color: white;
+
+}
+
+.inner-content ul {
+    padding-left: 20px;
+    list-style: upper-roman;
+}
+
 .black {
-    background-color: rgb(26, 25, 25);
+    background-color: rgb(30, 30, 30);
     color: white;
 }
 .white {

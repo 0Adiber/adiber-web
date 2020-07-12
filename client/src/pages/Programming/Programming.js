@@ -20,6 +20,10 @@ import pythonImg from './img/python.svg';
 import reactjsImg from './img/reactjs.svg';
 import nodejsImg from './img/nodejs.svg';
 import expressjsImg from './img/expressjs.svg';
+import goImg from './img/go.png';
+
+//languages
+var languages = []
 
 //configs
 var HOST = require('../../configs/host.json');
@@ -47,6 +51,8 @@ class Programming extends Component {
 
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
+
+        languages = require('./languages.json').items
 
         //fetch github own
         fetch(`http://${HOST.host}:33333/github`, { method: "GET" })
@@ -156,103 +162,23 @@ class Programming extends Component {
                     <div className="inner-content white">
                         <div className="content-wrap-in">
                             <h2>Programming Languages I use</h2>
+
                             <div id="programming-languages">
-                                <div className="programming-language-wrapper" id="programming-language-java">
-                                    <div className="programming-language-icon">
-                                        <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer"><img src={javaImg} alt="Java-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        At school we are primarily learning JAVA.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-c#">
-                                    <div className="programming-language-icon">
-                                        <a href="https://docs.microsoft.com/de-de/dotnet/csharp/" target="_blank" rel="noopener noreferrer"><img src={csharpImg} alt="C#-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Using it for an optional subject called ALDA.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-cpp">
-                                    <div className="programming-language-icon">
-                                        <a href="http://www.cplusplus.com/" target="_blank" rel="noopener noreferrer"><img src={cppImg} alt="C++-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Using it for an optional subject called ALDA.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-c">
-                                    <div className="programming-language-icon">
-                                        <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" target="_blank" rel="noopener noreferrer"><img src={cImg} alt="C-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        2017/18 (9th grade) we were learning C in school.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-python">
-                                    <div className="programming-language-icon">
-                                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img src={pythonImg} alt="Python-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        I am using Python for things like the <a href="https://github.com/0Adiber/YTDownloader.PY" target="_blank" rel="noopener noreferrer">Youtube Downloader</a> or scripts to automate stuff.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-html">
-                                    <div className="programming-language-icon">
-                                        <a href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language" target="_blank" rel="noopener noreferrer"><img src={htmlImg} alt="HTML-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Though HTML is not a programming language, I still put it in this section!
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-css">
-                                    <div className="programming-language-icon">
-                                        <a href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer"><img src={cssImg} alt="CSS-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        I am pretty!
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-js">
-                                    <div className="programming-language-icon">
-                                        <a href="https://de.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer"><img src={jsImg} alt="JS-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Main component of this Website (together with some jQuery)
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-php">
-                                    <div className="programming-language-icon">
-                                        <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer"><img src={phpImg} alt="PHP-Logo" width="200px"/></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        I used to program some websites with PHP
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-nodejs">
-                                    <div className="programming-language-icon">
-                                        <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer"><img src={nodejsImg} alt="NodeJS-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Nice, some server-side JS - which is the foundation for this website.
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-expressjs">
-                                    <div className="programming-language-icon">
-                                        <a href="https://expressjs.com/de/" target="_blank" rel="noopener noreferrer"><img src={expressjsImg} alt="ExpressJS-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Framework I used for my backend..
-                                    </div>
-                                </div>
-                                <div className="programming-language-wrapper" id="programming-language-reactjs">
-                                    <div className="programming-language-icon">
-                                        <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"><img src={reactjsImg} alt="ReactJS-Logo" /></a>
-                                    </div>
-                                    <div className="programming-language-text">
-                                        Absolutely awesome Framework I used for the Frontend of this page!
-                                    </div>
-                                </div>
+                                
+                                {
+                                    languages.map(l => {
+                                        return (
+                                            <div className="programming-language-wrapper" id={`programming-language-${l.title}`}>
+                                                <div className="programming-language-icon">
+                                                    <a href={l.href} target="_blank" rel="noopener noreferrer"><img src={require(`${l.img}`)} alt={l.alt} /></a>
+                                                </div>
+                                                <div className="programming-language-text">
+                                                    {l.text}
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
