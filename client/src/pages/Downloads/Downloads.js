@@ -21,11 +21,11 @@ class Downloads extends Component {
         };
     }
     componentDidMount() {
-        $(".nav a").css('color', 'white');
+        $(".nav a").css('color', 'black');
         $(window).scrollTop(0);
 
         //fetch posts
-        fetch(`http://${HOST.host}:33333/downloads`, { method: "GET" })
+        fetch(`${HOST.host}/downloads`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -55,11 +55,9 @@ class Downloads extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div>
+                <div className="downloads-wrapper">
                     {items.map(item => (
-                        <div className="download-item" key={item.title}>
-                            <Download title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs}/>
-                        </div>
+                        <Download title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs}/>
                     ))}
                 </div>
             );
@@ -70,10 +68,10 @@ class Downloads extends Component {
         return(
             <div>
                 <div className="content">
-                    <div className="inner-content black">
+                    <div className="inner-content white">
                         <div className="content-wrap-in">
                             <div className="inner-section">
-                            {this.posts()}
+                                {this.posts()}
                             </div>                         
                         </div>
                     </div>

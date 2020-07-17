@@ -24,9 +24,9 @@ class Home extends Component {
                         <p>I am a young developer, who is also interested in Cyber Security & studying Information Technology.</p>
                     </div>
                     <div id="more" onClick={this.scrollMore}>
-                        <svg class="arrows">
-							<path class="a1" d="M0 0 L30 32 L60 0"></path>
-							<path class="a2" d="M0 20 L30 52 L60 20"></path>
+                        <svg className="arrows">
+							<path className="a1" d="M0 0 L30 32 L60 0"></path>
+							<path className="a2" d="M0 20 L30 52 L60 20"></path>
 						</svg>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ class Home extends Component {
                     <div className="inner-content black">
                         <div className="content-wrap-in">
                             <h2>Skills</h2>
-                            <p>Over the years I have aquired a lot of skills regarding computers. And over the time I have..
+                            <p>Over the years I have aquired a lot of skills regarding computers. And over the time I have..</p>
                                 <ul>
                                     <li>programmed using different programming languages</li>
                                     <li>learned how to read api documentations</li>
@@ -57,7 +57,6 @@ class Home extends Component {
                                     <li>mastered the art of 100+ WPM</li>
                                     <li>got the hang of how big companies structure their code</li>
                                 </ul>
-                            </p>
                         </div>
                     </div>
                     <div className="inner-content white">

@@ -7,24 +7,6 @@ import './Programming.css';
 //Header images
 import bgs from './img/HeaderImg';
 
-//Images
-import csharpImg from './img/c#.png';
-import cppImg from './img/cpp.svg';
-import javaImg from './img/java.svg';
-import cImg from './img/c.png';
-import jsImg from './img/js.svg';
-import htmlImg from './img/html.svg';
-import cssImg from './img/css.svg';
-import phpImg from './img/php.svg';
-import pythonImg from './img/python.svg';
-import reactjsImg from './img/reactjs.svg';
-import nodejsImg from './img/nodejs.svg';
-import expressjsImg from './img/expressjs.svg';
-import goImg from './img/go.png';
-
-//languages
-var languages = []
-
 //configs
 var HOST = require('../../configs/host.json');
 
@@ -42,6 +24,11 @@ class Programming extends Component {
                 isLoaded: false,
                 items: [],
             },
+            languages: {
+                error: null,
+                isLoaded: false,
+                items: [],
+            }
         };
     }
     componentDidMount() {
@@ -52,10 +39,8 @@ class Programming extends Component {
         $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
 
-        languages = require('./languages.json').items
-
         //fetch github own
-        fetch(`http://${HOST.host}:33333/github`, { method: "GET" })
+        fetch(`${HOST.host}/github`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -77,7 +62,7 @@ class Programming extends Component {
             );
 
         //fetch github alda
-        fetch(`http://${HOST.host}:33333/gitalda`, { method: "GET" })
+        fetch(`${HOST.host}/gitalda`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -97,6 +82,27 @@ class Programming extends Component {
                     });
                 }
             );
+
+        fetch(`${HOST.host}/languages`, { method: "GET" })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        languages: {
+                            isLoaded: true,
+                            items: result.items
+                        }
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        languages: {
+                            isLoaded: true,
+                            error
+                        },
+                    });
+                }
+            )
 
         window.addEventListener('resize', this.resizeGithub);
     }
@@ -140,6 +146,35 @@ class Programming extends Component {
         }
     }
 
+    languages() {
+        const {error, isLoaded, items} = this.state.languages;
+        if(error) {
+            return <div>Error: { error.message }</div>
+        } else if(!isLoaded) {
+            return <div>Loading ...</div>
+        } else {
+            return (
+                <div id="programming-languages">
+                                
+                    {
+                        items.map(l => {
+                            return (
+                                <div className="programming-language-wrapper" id={`programming-language-${l.title}`} key={`programming-language-${l.title}`}>
+                                    <div className="programming-language-icon">
+                                        <a href={l.href} target="_blank" rel="noopener noreferrer"><img src={l.img.replace('$HOST', HOST.host)} alt={l.alt} /></a>
+                                    </div>
+                                    <div className="programming-language-text">
+                                        {l.text}
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
+    }
+
     render() {
         return(
             <div>
@@ -162,24 +197,7 @@ class Programming extends Component {
                     <div className="inner-content white">
                         <div className="content-wrap-in">
                             <h2>Programming Languages I use</h2>
-
-                            <div id="programming-languages">
-                                
-                                {
-                                    languages.map(l => {
-                                        return (
-                                            <div className="programming-language-wrapper" id={`programming-language-${l.title}`}>
-                                                <div className="programming-language-icon">
-                                                    <a href={l.href} target="_blank" rel="noopener noreferrer"><img src={require(`${l.img}`)} alt={l.alt} /></a>
-                                                </div>
-                                                <div className="programming-language-text">
-                                                    {l.text}
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                            {this.languages()}
                         </div>
                     </div>
                     <div className="inner-content black">

@@ -2,13 +2,23 @@
     "items" : [
         {
             "title": "LobbySigns",
-            "image": "https://www.chip.de/ii/1/2/8/4/2/4/1/8/minecraft-cd189705e207cc9d.jpg",
-            "file": "",
+            "image": "$HOST/images/lobbysigns.jpg",
+            "file": "https://www.spigotmc.org/resources/lobbysigns.80320/download?version=337853",
             "version": 1.0,
             "description": "Lets Players teleport between Server by clicking on a Sign.",
             "api": "Spigot",
             "github": "https://github.com/0Adiber/LobbySigns",
             "docs": "https://www.spigotmc.org/resources/lobbysigns.80320/"
+        },
+        {
+            "title": "BungeeChatFilter",
+            "image": "$HOST/images/bungeechatfilter.jpg",
+            "file": "https://www.spigotmc.org/resources/bungeechatfilter.80365/download?version=338025",
+            "version": 1.0,
+            "description": "A Regex Chatfilter for Bungeecord Servers.",
+            "api": "Bungeecord",
+            "github": "https://github.com/0Adiber/BungeeChatFilter",
+            "docs": "https://www.spigotmc.org/resources/bungeechatfilter.80365/"
         }
     ]
 }

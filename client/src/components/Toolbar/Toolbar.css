@@ -21,7 +21,7 @@
     float: left;
     padding-right: 10px;
     -webkit-transition: all ease-in-out 400ms;
-    transition: all ease-in-out 400ms;
+    transition: line-height ease-in-out 400ms;
     -webkit-transition-delay: 50ms;
     transition-delay: 50ms;
     font-size: 17px;

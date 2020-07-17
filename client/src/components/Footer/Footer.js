@@ -14,10 +14,10 @@ class Footer extends Component {
                 <div className="footer-top">
                     <h3>Links</h3>
                     <div className="footer-logos">
-                        <a href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon class="footer-icon" icon={faTwitter} /></a>
-                        <a href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon class="footer-icon" icon={faInstagram} /></a>
-                        <a href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon class="footer-icon" icon={faDiscord} /></a>
-                        <a href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon class="footer-icon" icon={faGithub} /></a>
+                        <a href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faTwitter} /></a>
+                        <a href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faInstagram} /></a>
+                        <a href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faDiscord} /></a>
+                        <a href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faGithub} /></a>
                     </div>
                 </div>
             </div>

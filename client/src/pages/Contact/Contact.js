@@ -30,17 +30,17 @@ class Contact extends Component {
                             <div className="content-flex">
                                 <div className="contact-div">
                                     <a href="https://www.instagram.com/adib3r/" rel="noopener noreferrer" target="_blank">
-                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faInstagram} /></div></a>
+                                    <div className="contact-icon-wrapper"><FontAwesomeIcon className="contact-icon" icon={faInstagram} /></div></a>
                                     <span className="contact-big">Instagram</span><span className="contact-small">@adib3r</span>
                                 </div>
                                 <div className="contact-div">
                                     <a href="https://discord.gg/7uFGcAE" rel="noopener noreferrer" target="_blank">
-                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faDiscord} /></div></a>
+                                    <div className="contact-icon-wrapper"><FontAwesomeIcon className="contact-icon" icon={faDiscord} /></div></a>
                                     <span className="contact-big">Discord</span><span className="contact-small">@MurliGmbH</span>
                                 </div>
                                 <div className="contact-div">
                                     <a href="https://github.com/0Adiber" rel="noopener noreferrer" target="_blank">
-                                    <div class="contact-icon-wrapper"><FontAwesomeIcon class="contact-icon" icon={faGithub} /></div></a>
+                                    <div className="contact-icon-wrapper"><FontAwesomeIcon className="contact-icon" icon={faGithub} /></div></a>
                                     <span className="contact-big">Github</span><span className="contact-small">@0Adiber</span>
                                 </div>
                             </div>

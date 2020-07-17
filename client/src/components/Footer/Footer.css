@@ -19,7 +19,7 @@
 }
 
 .footer-logos {
-    height: 40px;
+    font-size: 40px;
     position: relative;
     top: 50%;
     -webkit-transform: translate(0, -50%);
