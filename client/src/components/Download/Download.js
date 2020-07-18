@@ -16,11 +16,11 @@ class Download extends Component {
                 </div>
                 <div className="post-text">
                     <p>{this.props.description}</p>
-                    <span className="post-api">Api: {this.props.api}</span>
+                    {this.props.api !== "--" ? <span className="post-api">Api: {this.props.api}</span>:""}
                 </div>
                 <div className="post-links">
                     <a href={this.props.github} rel="noopener noreferrer" target="_blank">Github</a>
-                    <a href={this.props.docs} rel="noopener noreferrer" target="_blank">Docs</a>
+                    {this.props.docs !== "--" ? <a href={this.props.docs} rel="noopener noreferrer" target="_blank">Docs</a>:""}
                     <a href={this.props.file.replace('$HOST', HOST.host)} target="_blank">Download</a>
                 </div>
             </div>

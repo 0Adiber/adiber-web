@@ -40,6 +40,14 @@
     color: white;
 }
 
+#git-table-root th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: rgb(165, 8, 157);
+    color: white;
+}
+
 #git-table-alda th {
     padding-top: 10px;
     padding-bottom: 10px;

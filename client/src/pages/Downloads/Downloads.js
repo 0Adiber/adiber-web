@@ -57,7 +57,7 @@ class Downloads extends Component {
             return (
                 <div className="downloads-wrapper">
                     {items.map(item => (
-                        <Download version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
+                        <Download language={item.language} version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
                     ))}
                 </div>
             );
@@ -75,9 +75,7 @@ class Downloads extends Component {
                     <div className="inner-content download-content">
                         {flies}
                         <div className="content-wrap-in">
-                            <div className="inner-section">
-                                {this.posts()}
-                            </div>                         
+                            {this.posts()}           
                         </div>
                     </div>
                 </div>

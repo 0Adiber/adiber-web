@@ -24,6 +24,11 @@ class Programming extends Component {
                 isLoaded: false,
                 items: [],
             },
+            gitRoot: {
+                error: null,
+                isLoaded: false,
+                items: [],
+            },
             languages: {
                 error: null,
                 isLoaded: false,
@@ -83,6 +88,27 @@ class Programming extends Component {
                 }
             );
 
+        fetch(`${HOST.host}/gitweareroot`, { method: "GET" })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        gitRoot: {
+                            isLoaded: true,
+                            items: result.items
+                        }
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        gitRoot: {
+                            isLoaded: true,
+                            error
+                        }
+                    })
+                }
+            )
+
         fetch(`${HOST.host}/languages`, { method: "GET" })
             .then(res => res.json())
             .then(
@@ -121,7 +147,7 @@ class Programming extends Component {
     }
 
     github(specific) {
-        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : this.state.gitAlda);
+        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : specific === "root" ? this.state.gitRoot : this.state.gitAlda);
         if(error) {
             return <div>Error: { error.message }</div>
         } else if(!isLoaded) {
@@ -187,6 +213,10 @@ class Programming extends Component {
                             <div className="inner-section">
                                 <h3>My Public Github Repos</h3>
                                 <div className="git-projects">{this.github("own")}</div>
+                            </div>
+                            <div className="inner-section">
+                                <h3>Organisation: we-are-root</h3>
+                                <div className="git-projects">{this.github("root")}</div>
                             </div>
                             <div className="inner-section">
                                 <h3>Organisation: Alda-DHIF17</h3>

@@ -13,6 +13,7 @@ app.listen('33333', function(){
   //first github get req
   fetchGithubOwn();
   fetchGithubAlda();
+  fetchGithubRoot();
   getDownloadPosts();
   getLanguages()
 });
@@ -36,7 +37,7 @@ let gitItemsOwn = {
 
 function fetchGithubOwn() {
   gitItemsOwn.items = [];
-  fetch("https://api.github.com/users/0Adiber/repos?type=all", { method: "GET" })
+  fetch("https://api.github.com/users/0Adiber/repos", { method: "GET" })
   .then(res => res.json())
   .then(
     (result) => {
@@ -73,7 +74,6 @@ setInterval(() => {
   fetchGithubOwn();
 }, 3600*1000); //== 1h
 
-
 //get
 app.get('/github', function(req, res) {
   res.json(gitItemsOwn).end();
@@ -81,6 +81,62 @@ app.get('/github', function(req, res) {
 
 /*
 * Github OVER
+*/
+
+/*
+* GITHUB WEAREROOT
+*/
+
+let gitItemsRoot = {
+  items: []
+}
+
+function fetchGithubRoot() {
+  gitItemsRoot.items = [];
+  fetch("https://api.github.com/orgs/weare-root/repos?type=all&direction=desc", { method: "GET" })
+  .then(res => res.json())
+  .then(
+    (result) => {
+      let gitTemp = {
+        temps: []
+      };
+      gitTemp.temps = result;
+      gitTemp.temps.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+      gitTemp.temps.map(t => {
+        gitItemsRoot.items.push({
+          id: t.id,
+          name: t.name,
+          description: t.description,
+          owner: {
+            id: t.owner.id,
+            user: t.owner.login
+          },
+          url: t.html_url,
+          created_at: t.created_at,
+          updated_at: t.updated_at,
+          size: t.size 
+        });
+      });
+      console.log("\nUpdated Github we-are-root Successfully!".blue);
+    },
+    (error) => {
+      gitItemsRoot.items = {error: error.message}
+      console.log(gitItemsRoot)
+    }
+  );
+}
+//update github alda every hour
+setInterval(() => {
+  fetchGithubRoot();
+}, 3600*1000); //== 1h
+
+
+//get
+app.get('/gitweareroot', function(req, res) {
+  res.json(gitItemsRoot).end();
+});
+/*
+* Github we are root over
 */
 
 /*
