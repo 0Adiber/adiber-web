@@ -4,7 +4,7 @@ import $ from 'jquery';
 import Download from '../../components/Download/Download';
 
 //CSS
-import './Downloads.css';
+import './Downloads.scss';
 
 //configs
 var HOST = require('../../configs/host.json');
@@ -21,7 +21,7 @@ class Downloads extends Component {
         };
     }
     componentDidMount() {
-        $(".nav a").css('color', 'black');
+        $(".nav a").css('color', 'white');
         $(window).scrollTop(0);
 
         //fetch posts
@@ -57,7 +57,7 @@ class Downloads extends Component {
             return (
                 <div className="downloads-wrapper">
                     {items.map(item => (
-                        <Download title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs}/>
+                        <Download version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
                     ))}
                 </div>
             );
@@ -65,10 +65,15 @@ class Downloads extends Component {
     }
 
     render() {
+        const flies = [];
+        for (let i = 0; i < 20; i++) {
+            flies.push(<div className="firefly"></div>);
+        }
         return(
             <div>
                 <div className="content">
-                    <div className="inner-content white">
+                    <div className="inner-content download-content">
+                        {flies}
                         <div className="content-wrap-in">
                             <div className="inner-section">
                                 {this.posts()}

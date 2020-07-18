@@ -3,7 +3,7 @@
         {
             "title": "LobbySigns",
             "image": "$HOST/images/lobbysigns.jpg",
-            "file": "https://www.spigotmc.org/resources/lobbysigns.80320/download?version=337853",
+            "file": "$HOST/files/LobbySigns-v1.jar",
             "version": 1.0,
             "description": "Lets Players teleport between Server by clicking on a Sign.",
             "api": "Spigot",
@@ -13,7 +13,7 @@
         {
             "title": "BungeeChatFilter",
             "image": "$HOST/images/bungeechatfilter.jpg",
-            "file": "https://www.spigotmc.org/resources/bungeechatfilter.80365/download?version=338025",
+            "file": "$HOST/files/BungeeChatFilter-v1.jar",
             "version": 1.0,
             "description": "A Regex Chatfilter for Bungeecord Servers.",
             "api": "Bungeecord",

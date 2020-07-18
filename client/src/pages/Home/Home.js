@@ -21,7 +21,7 @@ class Home extends Component {
                 <div className="header">
                     <div className="text">
                         <h1>Adiber</h1>
-                        <p>I am a young developer, who is also interested in Cyber Security & studying Information Technology.</p>
+                        <p>I am a young Developer, who is interested in Cyber Security & studying Information Technology.</p>
                     </div>
                     <div id="more" onClick={this.scrollMore}>
                         <svg className="arrows">
@@ -62,8 +62,8 @@ class Home extends Component {
                     <div className="inner-content white">
                         <div className="content-wrap-in">
                             <h2>What got me interested in IT?</h2>
-                            <p>When I was about 10 years old, my father tought me touch typing, which were the beginnings of my IT career. 
-                                But same as all great things, my journey really started with Minecraft. I really enjoyed playing various Minigames on different Minecraft Server, 
+                            <p>When I was about 11 years old, my father tought me touch typing, which were the beginnings of my IT career. 
+                                But same as all great things, my journey really started with Minecraft. I really enjoyed playing various Minigames on different Minecraft Servers, 
                                 which then led me into creating my own Server, which was my first (but not last) experience with Linux (Debian). Soon I understood, that using other's
                                 Plugins is not gonna cut it, so I started learning how to program Minecraft Plugins (at the age of 12), which is how my Java journey started.
                             </p>
@@ -77,7 +77,7 @@ class Home extends Component {
                             <p>I am not really a sports person, the only game I really enjoy playing is Volleyball. 
                                 But this does not mean, that I don't care about my physical health. - I visit the gym 2 times a week, which may not seem that much, but it's all I have got time for.</p>
                             <h3>Gaming</h3>
-                            <p>As your typical IT Guy, I also play some games. At the moment not really a lot of it, but there were times. My favourite games are CS:GO, Rocket League and the greatest of all time Minecraft</p>
+                            <p>As your typical IT Guy, I also play some games. At the moment not really a lot of it, but there were times. My most favourite games are CS:GO, Rocket League and the greatest of all times Minecraft.</p>
                             <h3>Chess</h3>
                             <p>As of July 2020, I really like Chess. Besides watching some games from Hikaru or Botez I also enjoy playing on <a href="https://www.chess.com" target="_blank" rel="noreferrer noopener">Chess.com</a> (especially Puzzles)</p>
                         </div>

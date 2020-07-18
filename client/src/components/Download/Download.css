@@ -6,6 +6,7 @@
     align-items: center;
     border: 2px solid black;
     padding: 20px;
+    backdrop-filter: blur(3px);
 }
 
 .post-img-wrapper {
@@ -21,7 +22,7 @@
 }
 
 .post-text {
-    color: black;
+    color: white;
     font-family: 'Dosis', sans-serif;
     padding: 10px;
 }
@@ -36,7 +37,7 @@
 }
 
 .post-links a {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .post-links {
@@ -46,4 +47,9 @@
     justify-content: space-evenly;
     margin-top: auto;
     width: 100%;
+}
+
+.post-wrapper h3 {
+    font-variant: small-caps;
+    color: white;
 }
