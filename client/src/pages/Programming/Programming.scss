@@ -24,40 +24,67 @@
 .git-table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 10px;
 }
 
 .git-table td,
 .git-projects th {
-    border: 1px solid rgb(124, 122, 122);
-    padding: 7px;
+    padding: 10px;
+}
+//general table settings
+.git-projects th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    color: white;
 }
 
 #git-table-own th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
     background-color: #fc773a;
-    color: white;
 }
 
 #git-table-root th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
-    background-color: rgb(165, 8, 157);
-    color: white;
+    background-color: rgb(74, 37, 207);
 }
 
 #git-table-alda th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
     background-color: #1699cc;
-    color: white;
 }
-
+//make every 2nd child darker
 .git-table tr:nth-child(even) {
     background-color: rgb(48, 46, 46);
+}
+//the border radius for the table header
+$table-border-radius: 20px;
+.git-table tr:first-child {
+    th:first-child {
+        border-top-left-radius: $table-border-radius;
+        border-bottom-left-radius: $table-border-radius;
+    }
+    th:last-child {
+        border-top-right-radius: $table-border-radius;
+        border-bottom-right-radius: $table-border-radius;
+    }
+}
+//the start of the table border radius
+.git-table tr:nth-child(2) {
+    td:first-child {
+        border-top-left-radius: $table-border-radius;
+    }
+    td:last-child {
+        border-top-right-radius: $table-border-radius;
+    }
+    
+}
+
+//the end of the table border radius
+.git-table tr:last-child {
+    td:first-child {
+        border-bottom-left-radius: $table-border-radius;
+    }
+    td:last-child {
+        border-bottom-right-radius: $table-border-radius;
+    }
 }
 
 .git-table tr:hover {
@@ -76,9 +103,10 @@
     color: white;
 }
 
-.programming-languages {
+#programming-languages {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .programming-language-wrapper {

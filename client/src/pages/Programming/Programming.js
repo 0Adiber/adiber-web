@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 //CSS
-import './Programming.css';
+import './Programming.scss';
 
 //Header images
 import bgs from './img/HeaderImg';

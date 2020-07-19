@@ -21,7 +21,7 @@ class Download extends Component {
                 <div className="post-links">
                     <a href={this.props.github} rel="noopener noreferrer" target="_blank">Github</a>
                     {this.props.docs !== "--" ? <a href={this.props.docs} rel="noopener noreferrer" target="_blank">Docs</a>:""}
-                    <a href={this.props.file.replace('$HOST', HOST.host)} target="_blank">Download</a>
+                    <a href={this.props.file.replace('$HOST', HOST.host)} target="_blank" rel="noopener noreferrer">Download</a>
                 </div>
             </div>
         );
