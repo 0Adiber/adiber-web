@@ -1,6 +1,6 @@
 # Adiber-Web
 <p align="center">
-  <img src="https://img.shields.io/website?down_color=red&down_message=down&style=for-the-badge&up_color=green&up_message=up&url=https%3A%2F%2Fgithub.com%2F0Adiber%2Fadiber-web" />
+  <img src="https://img.shields.io/website?down_color=red&down_message=down&style=for-the-badge&up_color=green&up_message=up&url=https%3A%2F%2Fadiber.rocks" />
   <img src="https://img.shields.io/github/last-commit/0Adiber/adiber-web?color=blueviolet&label=faul%20seit&style=for-the-badge" />
  </p>
 
