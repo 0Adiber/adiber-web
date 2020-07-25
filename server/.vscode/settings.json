@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/240f12f7-8be5-4b62-b71c-b5fee96551e2/resourceGroups/adiber-web/providers/Microsoft.Web/sites/adiber-web-backend",
+    "appService.deploySubpath": "."
+}
