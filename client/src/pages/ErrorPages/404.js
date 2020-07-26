@@ -16,7 +16,7 @@ class Programming extends Component {
                     <div className="content">
                         <div id="error"><h3>404 <span id="red">Not</span> Found</h3>
                             <p>The Page you requested could not be found. If you think that's an error, please contact me.</p><br />
-                            <p>Click <a href="/contact">here</a> to return back to Home</p>
+                            <p>Click <a href="/">here</a> to return back to Home</p>
                         </div>
                     </div>
                 </div>

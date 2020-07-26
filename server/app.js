@@ -45,7 +45,7 @@ function fetchGithubOwn() {
         temps: []
       };
       gitTemp.temps = result;
-      gitTemp.temps.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+      gitTemp.temps.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
       gitTemp.temps.map(t => {
         gitItemsOwn.items.push({
           id: t.id,
