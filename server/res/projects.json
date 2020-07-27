@@ -6,21 +6,16 @@
             "file": "https://github.com/weare-root/AutoClicker/releases/tag/1.0.0",
             "version": "1.0.0",
             "description": "High featured Autoclicker",
-            "api": "--",
             "language": "Go",
-            "github": "https://github.com/weare-root/AutoClicker",
-            "docs": "--"
+            "github": "https://github.com/weare-root/AutoClicker"
         },
         {
             "title": "Adiber-Web",
             "image": "$HOST/images/adiber-web.jpg",
-            "file": "--",
             "version": "1.0",
             "description": "My Website since 2019",
-            "api": "--",
             "language": "JS",
-            "github": "https://github.com/0Adiber/adiber-web",
-            "docs": "--"
+            "github": "https://github.com/0Adiber/adiber-web"
         },
         {
             "title": "LobbySigns",
@@ -28,7 +23,6 @@
             "file": "$HOST/files/LobbySigns-v1.jar",
             "version": 1.0,
             "description": "Lets Players teleport between Server by clicking on a Sign.",
-            "api": "Spigot",
             "language": "Java",
             "github": "https://github.com/0Adiber/LobbySigns",
             "docs": "https://www.spigotmc.org/resources/lobbysigns.80320/"
@@ -39,7 +33,6 @@
             "file": "$HOST/files/BungeeChatFilter-v1.jar",
             "version": 1.0,
             "description": "A Regex Chatfilter for Bungeecord Servers.",
-            "api": "Bungeecord",
             "language": "Java",
             "github": "https://github.com/0Adiber/BungeeChatFilter",
             "docs": "https://www.spigotmc.org/resources/bungeechatfilter.80365/"

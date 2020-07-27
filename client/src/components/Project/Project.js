@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 
 //CSS
-import './Project.css';
+import './Project.scss';
 
 //configs
-var HOST = require('../../configs/host.json');
+var HOST = require('../../configs/host.json').host;
 
 class Project extends Component {
     render(){
+        var cardStyle = {
+            backgroundImage: `url(${this.props.image.replace('$HOST', HOST)})`,
+        }
+        console.log(cardStyle)
         return(
-            <div className="post-wrapper">
+
+            <div className="project-card">
+                <div className="card-front" style={cardStyle}>
+                    {/*<h3>{this.props.title} <span className="post-version">v{this.props.version}</span></h3>*/}
+                </div>
+                <div className="card-back">
+                    <h3>{this.props.title} <span className="post-version">v{this.props.version}</span></h3>
+                    <div className="card-text">
+                        <p>{this.props.description}</p>
+                    </div>
+                    <div className="card-links">
+                        <a href={this.props.github} rel="noopener noreferrer" target="_blank">Github</a>
+                        {this.props.docs ? <a href={this.props.docs} rel="noopener noreferrer" target="_blank">Docs</a>:""}
+                        {this.props.file ? <a href={this.props.file.replace('$HOST', HOST.host)} target="_blank" rel="noopener noreferrer">Download</a>:""}
+                    </div>
+                </div>
+                
+                {/*<div className="post-wrapper">
                 <h3>{this.props.title} <span className="post-version">v{this.props.version}</span></h3>
                 <div className="post-img-wrapper">
                     <img src={this.props.image.replace('$HOST', HOST.host)} alt={this.props.title}/>
@@ -23,7 +44,9 @@ class Project extends Component {
                     {this.props.docs !== "--" ? <a href={this.props.docs} rel="noopener noreferrer" target="_blank">Docs</a>:""}
                     <a href={this.props.file.replace('$HOST', HOST.host)} target="_blank" rel="noopener noreferrer">Download</a>
                 </div>
+                </div>*/}
             </div>
+
         );
     }
 }

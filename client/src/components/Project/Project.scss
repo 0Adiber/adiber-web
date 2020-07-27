@@ -1,0 +1,138 @@
+$background:rgb(17, 17, 17);
+
+.project-card {
+    margin-top: 20px;
+    position: relative;
+    height: 400px;
+    width: 300px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: .5s;
+    &:hover .card-front {
+        transform: rotateX(-180deg);
+    }
+    &:hover .card-back {
+        transform: rotateX(0deg);
+    }
+
+    font-family: 'Raleway', sans-serif;
+
+    .card-front {
+        height: 100%;
+        width: 100%;
+        background-position: 50% 50%;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $background;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        transition: .5s;
+    }
+
+    .card-back {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $background;
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+        transition: .5s;
+        color: #fff;
+        text-align: center;
+
+        h3 {
+            margin: 40% auto 35% auto;
+            font-size: 26px;
+        }
+
+        .card-text {
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            padding: 10px;
+        }
+
+        .card-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: all 250ms ease-in-out;
+
+            &:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
+        }
+    }
+
+}
+
+/*.post-wrapper {
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+    margin-top: 50px;
+}
+
+.post-img-wrapper {
+    overflow: hidden;
+}
+.post-img-wrapper img {
+    width: 100%;
+    transition: transform .5s ease;
+}
+
+.post-wrapper:hover img {
+    transform: scale(1.5);
+}
+
+.post-text {
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    padding: 10px;
+}
+
+.post-text p {
+    font-size: 20px;
+}
+
+.post-api {
+    font-size: 16px;
+    display: block;
+}
+
+.post-links a {
+    color: rgb(255, 255, 255);
+}
+
+.post-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: auto;
+    width: 100%;
+}
+
+.post-wrapper h3 {
+    font-variant: small-caps;
+    color: white;
+}*/
