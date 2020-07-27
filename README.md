@@ -23,7 +23,7 @@ Why a backend? - you ask. Well, because performance. I don't want to send reques
 
 ## Info
 For (frontend-) deployment I used [Vercel](https://vercel.com/)
-<br>The (backend-) deployment is possible because of [Microsoft Azure's](https://azure.microsoft.com/de-de/free/students/) free 100$ credit with the [Github Student Pack](https://education.github.com/pack)
+<br>The (backend-) deployment is possible because of [Microsoft Azure's](https://azure.microsoft.com/de-de/free/students/) free 100$ credit with the [Github Student Pack](https://education.github.com/pack) => Here I have to use [UptimeRobot](https://uptimerobot.com/) to ping the Server periodically, so that it won't go to sleep.
 <br>I got my totally awesome domain free from [name.com](https://name.com) also because of the [Github Student Pack](https://education.github.com/pack)
 
 ## Todo
