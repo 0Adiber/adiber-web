@@ -230,12 +230,6 @@ class Programming extends Component {
                             {this.languages()}
                         </div>
                     </div>
-                    <div className="inner-content black">
-                        <div className="content-wrap-in">
-                            <h2>Fuhn</h2>
-                            <p>This section is just about stuff I programmed, but which is completely unecessary (probably).</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         );

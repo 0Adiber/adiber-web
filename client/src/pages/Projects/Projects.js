@@ -72,7 +72,7 @@ class Projects extends Component {
             return (
                 <div className="projects-wrapper">
                     {items.map(item => (
-                        <Project language={item.language} version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
+                        <Project key={item.title} language={item.language} version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
                     ))}
                 </div>
             );
@@ -82,7 +82,7 @@ class Projects extends Component {
     render() {
         const flies = [];
         for (let i = 0; i < 20; i++) {
-            flies.push(<div className="firefly"></div>);
+            flies.push(<div key={`firefly-${i}`} className="firefly"></div>);
         }
         return(
             <div>

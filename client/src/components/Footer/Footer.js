@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //CSS
-import './Footer.css';
+import './Footer.scss';
 
 //Fontawesome
 import { faDiscord, faInstagram, faGithub, faTwitter} from '@fortawesome/free-brands-svg-icons';
@@ -14,10 +14,30 @@ class Footer extends Component {
                 <div className="footer-top">
                     <h3>Links</h3>
                     <div className="footer-logos">
-                        <a href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faTwitter} /></a>
-                        <a href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faInstagram} /></a>
-                        <a href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faDiscord} /></a>
-                        <a href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="footer-icon" icon={faGithub} /></a>
+                        <div className="footer-logo-wrapper">
+                            <a className="footer-link" href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon className="footer-icon" icon={faTwitter} />
+                            </a>
+                            <span>Twitter</span>
+                        </div>
+                        <div className="footer-logo-wrapper">
+                            <a className="footer-link" href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon className="footer-icon" icon={faInstagram} />
+                            </a>
+                            <span>Instagram</span>
+                        </div>
+                        <div className="footer-logo-wrapper">
+                            <a className="footer-link" href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon className="footer-icon" icon={faDiscord} />
+                            </a>
+                            <span>Discord</span>
+                        </div>
+                        <div className="footer-logo-wrapper">
+                            <a className="footer-link" href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon className="footer-icon" icon={faGithub} />
+                            </a>
+                            <span>Github</span>
+                        </div>
                     </div>
                 </div>
             </div>
