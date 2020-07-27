@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-import Download from '../../components/Download/Download';
+import Project from '../../components/Project/Project';
 
 //CSS
-import './Downloads.scss';
+import './Projects.scss';
 
 //configs
-var HOST = require('../../configs/host.json');
+var HOST = require('../../configs/host.json').host;
 
-class Downloads extends Component {
+class Projects extends Component {
     constructor(props) {
         super(props);
+
+        console.log(HOST)
+
         this.state = {
             posts: {
                 error: null,
@@ -25,10 +28,15 @@ class Downloads extends Component {
         $(window).scrollTop(0);
 
         //fetch posts
-        fetch(`${HOST.host}/downloads`, { method: "GET" })
-            .then(res => res.json())
+        fetch(`${HOST}/projects`, { method: "GET" })
+            .then(res => {
+                if(!res.ok)
+                    throw Error("Could not reach Endpoint")
+                return res.json()
+            })
             .then(
                 (result) => {
+                    console.log(result)
                     this.setState({
                         posts: {
                             isLoaded: true,
@@ -44,7 +52,14 @@ class Downloads extends Component {
                         },
                     });
                 }
-            );
+            ).catch(error => {
+                this.setState({
+                    posts: {
+                        isLoaded: true,
+                        error
+                    }
+                })
+            });
     }
 
     posts() {
@@ -55,9 +70,9 @@ class Downloads extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className="downloads-wrapper">
+                <div className="projects-wrapper">
                     {items.map(item => (
-                        <Download language={item.language} version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
+                        <Project language={item.language} version={item.version} title={item.title} image={item.image} description={item.description} api={item.api} github={item.github} docs={item.docs} file={item.file}/>
                     ))}
                 </div>
             );
@@ -71,8 +86,8 @@ class Downloads extends Component {
         }
         return(
             <div>
-                <div className="content">
-                    <div className="inner-content download-content">
+                <div className="projects-content">
+                    <div className="inner-content project-content">
                         {flies}
                         <div className="content-wrap-in">
                             {this.posts()}           
@@ -84,4 +99,4 @@ class Downloads extends Component {
     }
 }
 
-export default Downloads;
+export default Projects;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 //CSS
-import './Download.css';
+import './Project.css';
 
 //configs
 var HOST = require('../../configs/host.json');
 
-class Download extends Component {
+class Project extends Component {
     render(){
         return(
             <div className="post-wrapper">
@@ -28,4 +28,4 @@ class Download extends Component {
     }
 }
 
-export default Download;
+export default Project;

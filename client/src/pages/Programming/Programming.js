@@ -8,7 +8,7 @@ import './Programming.scss';
 import bgs from './img/HeaderImg';
 
 //configs
-var HOST = require('../../configs/host.json');
+var HOST = require('../../configs/host.json').host;
 
 class Programming extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class Programming extends Component {
         $(window).scrollTop(0);
 
         //fetch github own
-        fetch(`${HOST.host}/github`, { method: "GET" })
+        fetch(`${HOST}/github`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -67,7 +67,7 @@ class Programming extends Component {
             );
 
         //fetch github alda
-        fetch(`${HOST.host}/gitalda`, { method: "GET" })
+        fetch(`${HOST}/gitalda`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -88,7 +88,7 @@ class Programming extends Component {
                 }
             );
 
-        fetch(`${HOST.host}/gitweareroot`, { method: "GET" })
+        fetch(`${HOST}/gitweareroot`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -109,7 +109,7 @@ class Programming extends Component {
                 }
             )
 
-        fetch(`${HOST.host}/languages`, { method: "GET" })
+        fetch(`${HOST}/languages`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -187,7 +187,7 @@ class Programming extends Component {
                             return (
                                 <div className="programming-language-wrapper" id={`programming-language-${l.title}`} key={`programming-language-${l.title}`}>
                                     <div className="programming-language-icon">
-                                        <a href={l.href} target="_blank" rel="noopener noreferrer"><img src={l.img.replace('$HOST', HOST.host)} alt={l.alt} /></a>
+                                        <a href={l.href} target="_blank" rel="noopener noreferrer"><img src={l.img.replace('$HOST', HOST)} alt={l.alt} /></a>
                                     </div>
                                     <div className="programming-language-text">
                                         {l.text}

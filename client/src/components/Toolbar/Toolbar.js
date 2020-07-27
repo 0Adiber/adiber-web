@@ -6,7 +6,7 @@ import $ from 'jquery';
 import Home from '../../pages/Home/Home';
 import Programming from '../../pages/Programming/Programming';
 import Youtube from '../../pages/Youtube/Youtube';
-import Downloads from '../../pages/Downloads/Downloads';
+import Projects from '../../pages/Projects/Projects';
 import Contact from '../../pages/Contact/Contact';
 import NotFound from '../../pages/ErrorPages/404';
 
@@ -59,8 +59,8 @@ class Toolbar extends Component {
                                 <Link to="/youtube"><li>
                                     Youtube
                                 </li></Link>
-                                <Link to="/downloads"><li>
-                                    Downloads
+                                <Link to="/projects"><li>
+                                    Projects
                                 </li></Link> 
                             </ul>
                         </div>
@@ -76,7 +76,7 @@ class Toolbar extends Component {
                     <Route path="/programming" component={Programming} />
                     <Route path="/youtube" component={Youtube} />
                     <Route path="/contact" component={Contact} />
-                    <Route path="/downloads" component={Downloads} />
+                    <Route path="/projects" component={Projects} />
                     <Route component={NotFound} />
                 </Switch>
             </div>

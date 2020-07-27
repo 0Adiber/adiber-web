@@ -14,7 +14,7 @@ app.listen('33333', function(){
   fetchGithubOwn();
   fetchGithubAlda();
   fetchGithubRoot();
-  getDownloadPosts();
+  getProjectJson();
   getLanguages()
 });
 
@@ -184,7 +184,7 @@ function fetchGithubAlda() {
 //update github alda every hour
 setInterval(() => {
   fetchGithubAlda();
-}, 3600*1000); //== 1h
+}, 5*60*1000); //== 5 min
 
 
 //get
@@ -199,18 +199,18 @@ app.get('/gitalda', function(req, res) {
 /*
 * Posts START
 */
-let downloadJson;
+let projectsJson;
 //getting the downloads posts
-function getDownloadPosts() {
-  downloadJson = require('./res/downloads.json')
+function getProjectJson() {
+  projectsJson = require('./res/projects.json')
 }
 //update every hour
 setInterval(() => {
-  getDownloadPosts();
-}, 3600*1000) //== 1h
+  getProjectJson();
+}, 5*60*1000) //== 5 min
 //get
-app.get('/downloads', function(req, res) {
-  res.json(downloadJson).end()
+app.get('/projects', function(req, res) {
+  res.json(projectsJson).end()
 });
 
 
