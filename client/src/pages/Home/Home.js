@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 //CSS
-import './Home.css';
+import './Home.scss';
 
 class Home extends Component {
     componentDidMount() {
@@ -24,10 +24,6 @@ class Home extends Component {
                         <p>I am a young Developer, who is interested in Cyber Security & studying Information Technology.</p>
                     </div>
                     <div id="more" onClick={this.scrollMore}>
-                        <svg className="arrows">
-							<path className="a1" d="M0 0 L30 32 L60 0"></path>
-							<path className="a2" d="M0 20 L30 52 L60 20"></path>
-						</svg>
                     </div>
                 </div>
                 <div className="content">

@@ -53,25 +53,36 @@
 }
 
 #more {
+    background: #333;
     position: absolute;
-    color: white;
-    bottom: 0;
+    bottom: 50px;
     left: 50%;
-    transform: translateX(-50%);
-    z-index: 99;
-    cursor: pointer;
-}
+    transform: translate(-50%);
 
-.arrows {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	left: 50%;
-	margin-left: -30px;
-	bottom: 20px;
-}
-.arrows path {
-	stroke: white;
-	fill: transparent;
-    stroke-width: 3px;
+    &::before {
+        animation: bounce 1s ease infinite;
+        bottom: 2rem;
+        color: #fff;
+        content: '╲╱';
+        font-size: 1rem;
+        height: 4rem;
+        left: 50%;
+        letter-spacing: -1px;
+        line-height: 4rem;
+        margin-left: -3rem;
+        opacity: 0.8;
+        position: absolute;
+        text-align: center;
+        width: 6rem;
+        cursor: pointer;
+    }
+        
+    @keyframes bounce {
+        50% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 }
