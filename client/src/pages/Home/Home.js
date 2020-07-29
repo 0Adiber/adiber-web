@@ -19,6 +19,8 @@ class Home extends Component {
         return(
             <div>
                 <div className="header">
+                    <div className="bg"></div>
+                    <div className="lightning flashfx"></div>
                     <div className="text">
                         <h1>Adiber</h1>
                         <p>I am a young Developer, who is interested in Cyber Security & studying Information Technology.</p>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 //CSS
-import './errors.css';
+import './errors.scss';
 
 class Programming extends Component {
     componentDidMount() {
@@ -14,8 +14,12 @@ class Programming extends Component {
             <div className="wrapper-all">
                 <div className="content-wrap-in">
                     <div className="content">
-                        <div id="error"><h3>404 <span id="red">Not</span> Found</h3>
-                            <p>The Page you requested could not be found. If you think that's an error, please contact me.</p><br />
+                        <div className="error-placeholder">
+                        </div>
+                        <div className="error-content">
+                            <h3>404</h3>
+                            <p>The Page you requested could not be found. If you think that's an error, please contact me.</p>
+                            
                             <p>Click <a href="/">here</a> to return back to Home</p>
                         </div>
                     </div>

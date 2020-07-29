@@ -15,41 +15,89 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 0;
-    background-image: url('./img/bg2.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+
+    .text {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        max-width: 800px;
+        width: 80%;
+        height: 200px;
+        color: #fff;
+        font-family: 'Caveat', cursive;
+        text-shadow: 1px 1px black;
+        font-size: 30px;
+        cursor: text;
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 40px;
+            position: relative;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-image: url('./img/bg2.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .lightning {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('./img/bg2.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-filter: brightness(3);
+        filter: brightness(3);
+        -o-filter: brightness(3);
+        -moz-filter: brightness(3);
+        opacity: 0;
+        z-index: -1;
+    }
+    .flashfx {
+        -webkit-animation: flash ease-out 7s infinite;
+        -moz-animation: flash ease-out 7s infinite;
+        animation: flash ease-out 7s infinite;
+        animation-delay: 2s;
+    }
 }
  
-.header .text {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    max-width: 800px;
-    width: 80%;
-    height: 200px;
-    color: #fff;
-    font-family: 'Caveat', cursive;
-    text-shadow: 1px 1px black;
-    font-size: 30px;
-    cursor: text;
+@-webkit-keyframes flash {
+	from { opacity: 0; }
+    92% { opacity: 0; }
+    93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 0.9; } 
+    to { opacity: 0; }
 }
 
-.header .text h1 {
-    font-family: 'Permanent Marker', cursive;
-    font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-size: 40px;
-    position: relative;
-    text-align: center;
-    display: block;
+@keyframes flash {
+	from { opacity: 0; } 
+    92% { opacity: 0; }
+	93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 1; } 
+	to { opacity: 0; }
 }
 
 #more {
