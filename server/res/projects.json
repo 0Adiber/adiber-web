@@ -10,6 +10,14 @@
             "github": "https://github.com/weare-root/AutoClicker"
         },
         {
+            "title": "TuneZ",
+            "image": "$HOST/images/tunez.png",
+            "version": "1.0.0",
+            "description": "Exceptional Discord Music Bot",
+            "language": "NodeJS",
+            "github": "https://github.com/0Adiber/TuneZ"
+        },
+        {
             "title": "Adiber-Web",
             "image": "$HOST/images/adiber-web.jpg",
             "version": "1.0",
