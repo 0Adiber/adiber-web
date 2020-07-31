@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var colors = require('colors');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const fetch = require("node-fetch");
 
 app.use(express.static('public'))
@@ -16,6 +19,7 @@ app.listen('33333', function(){
   fetchGithubRoot();
   getProjectJson();
   getLanguages()
+  getYoutube();
 });
 
 app.use(function(req, res, next) {
@@ -69,10 +73,10 @@ function fetchGithubOwn() {
     }
   );
 }
-//update github every hour
+//update github every 5 minutes
 setInterval(() => {
   fetchGithubOwn();
-}, 3600*1000); //== 1h
+}, 5*60*1000); //== 5 min
 
 //get
 app.get('/github', function(req, res) {
@@ -125,10 +129,10 @@ function fetchGithubRoot() {
     }
   );
 }
-//update github alda every hour
+//update github weareroot every 5 minutes
 setInterval(() => {
   fetchGithubRoot();
-}, 3600*1000); //== 1h
+}, 5*60*1000); //== 5 min
 
 
 //get
@@ -181,7 +185,7 @@ function fetchGithubAlda() {
     }
   );
 }
-//update github alda every hour
+//update github alda every 5 minutes
 setInterval(() => {
   fetchGithubAlda();
 }, 5*60*1000); //== 5 min
@@ -197,14 +201,14 @@ app.get('/gitalda', function(req, res) {
 */
 
 /*
-* Posts START
+* Projects START
 */
 let projectsJson;
 //getting the downloads posts
 function getProjectJson() {
   projectsJson = require('./res/projects.json')
 }
-//update every hour
+//update every 5 minutes
 setInterval(() => {
   getProjectJson();
 }, 5*60*1000) //== 5 min
@@ -213,7 +217,14 @@ app.get('/projects', function(req, res) {
   res.json(projectsJson).end()
 });
 
+/*
+* Projects OVER
+*/
 
+
+/*
+* LANGUAGES START
+*/
 let languagesJson;
 //getting the Languages
 function getLanguages() {
@@ -222,10 +233,72 @@ function getLanguages() {
 //update every hour
 setInterval(() => {
   getLanguages();
-}, 3600*1000) // == 1h
+}, 5*60*1000) // == 5 min
 //get
 app.get('/languages', function(req, res) {
   res.json(languagesJson).end()
 })
+
+/*
+* Languages OVER
+*/
+
+/*
+* YOUTUBE START
+*/
+
+let youtubeJson = [];
+//getting the Date from YT Data API v3
+function getYoutube() {
+  const URL = "https://www.googleapis.com/youtube/v3/";
+  const APIKEY = process.env.API_KEY;
+  fetch(URL + "channels?part=contentDetails&id=UCPVrHhuwzAz9ylRcSx2ne_A&key=" + APIKEY)
+    .then(res => res.json())
+    .then(json => {
+      const uploadsId = json.items[0].contentDetails.relatedPlaylists.uploads;
+
+      fetch(URL + "playlistItems?part=contentDetails&maxResults=50&playlistId=" + uploadsId + "&key=" + APIKEY)
+        .then(res => res.json())
+        .then(json => {
+          json.items.map(i => {
+            //i.contentDetails.videoId
+            fetch(URL + "videos?part=snippet,statistics&id="+i.contentDetails.videoId+"&key=" + APIKEY)
+              .then(res => res.json())
+              .then(json => {
+                json = json.items[0];
+                youtubeJson.push({
+                  'videoId': json.id,
+                  'title': json.snippet.title,
+                  'thumbnail': json.snippet.thumbnails.high.url,
+                  'views': json.statistics.viewCount,
+                  'likes': json.statistics.likeCount,
+                  'comments': json.statistics.commentCount,
+                })
+              })
+              .catch(err => {
+                console.log("Could not fetch Youtube: " + err.toString());
+              })
+          })
+        })
+        .catch(err => {
+          console.log("Could not fetch Youtube: " + err.toString());
+        })
+    })
+    .catch(err => {
+      console.log("Could not fetch Youtube: " + err.toString());
+    })
+}
+//update every hour because quota
+setInterval(() => {
+  getYoutube();
+}, 3600*1000) // == 1h
+//get
+app.get('/youtube', function(req, res) {
+  res.json(youtubeJson).end()
+})
+
+/*
+* Youtube OVER
+*/
 
 module.exports = app;
