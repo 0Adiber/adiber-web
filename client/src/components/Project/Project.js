@@ -11,7 +11,6 @@ class Project extends Component {
         var cardStyle = {
             backgroundImage: `url(${this.props.image.replace('$HOST', HOST)})`,
         }
-        console.log(cardStyle)
         return(
 
             <div className="project-card">

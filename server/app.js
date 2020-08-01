@@ -207,6 +207,7 @@ let projectsJson;
 //getting the downloads posts
 function getProjectJson() {
   projectsJson = require('./res/projects.json')
+  console.log("\nUpdated Projects Successfully!".blue);
 }
 //update every 5 minutes
 setInterval(() => {
@@ -229,6 +230,7 @@ let languagesJson;
 //getting the Languages
 function getLanguages() {
   languagesJson = require('./res/languages.json')
+  console.log("\nUpdated Languages Successfully!".blue);
 }
 //update every hour
 setInterval(() => {
@@ -250,6 +252,7 @@ app.get('/languages', function(req, res) {
 let youtubeJson = [];
 //getting the Date from YT Data API v3
 function getYoutube() {
+  youtubeJson = []
   const URL = "https://www.googleapis.com/youtube/v3/";
   const APIKEY = process.env.API_KEY;
   fetch(URL + "channels?part=contentDetails&id=UCPVrHhuwzAz9ylRcSx2ne_A&key=" + APIKEY)
@@ -269,7 +272,7 @@ function getYoutube() {
                 youtubeJson.push({
                   'videoId': json.id,
                   'title': json.snippet.title,
-                  'thumbnail': json.snippet.thumbnails.high.url,
+                  'thumbnail': json.snippet.thumbnails.maxres.url,
                   'views': json.statistics.viewCount,
                   'likes': json.statistics.likeCount,
                   'comments': json.statistics.commentCount,
@@ -279,6 +282,7 @@ function getYoutube() {
                 console.log("Could not fetch Youtube: " + err.toString());
               })
           })
+          console.log("\nUpdated Youtube Successfully!".blue);
         })
         .catch(err => {
           console.log("Could not fetch Youtube: " + err.toString());
@@ -294,7 +298,7 @@ setInterval(() => {
 }, 3600*1000) // == 1h
 //get
 app.get('/youtube', function(req, res) {
-  res.json(youtubeJson).end()
+  res.json({items: [...youtubeJson]}).end()
 })
 
 /*
