@@ -36,4 +36,4 @@ For (frontend-) deployment I used [Vercel](https://vercel.com/)
 - [x] Programming
 - [x] Contact
 - [x] Downloads
-- [ ] Youtube
+- [x] Youtube
