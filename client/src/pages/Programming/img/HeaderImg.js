@@ -1,5 +1,5 @@
-import bg3 from './bgs/bg3.jpg';
-import bg2 from './bgs/bg2.jpg';
+import bg3 from './bgs/bg3.webp';
+import bg2 from './bgs/bg2.webp';
 
 const bgs = [
     bg3,

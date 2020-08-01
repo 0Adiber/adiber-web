@@ -77,7 +77,7 @@ class Home extends Component {
                             <h3>Gaming</h3>
                             <p>As your typical IT Guy, I also play some games. At the moment not really a lot of it, but there were times. My most favourite games are CS:GO, Rocket League and the greatest of all times Minecraft.</p>
                             <h3>Chess</h3>
-                            <p>As of July 2020, I really like Chess. Besides watching some games from Hikaru or Botez I also enjoy playing on <a href="https://www.chess.com" target="_blank" rel="noreferrer noopener">Chess.com</a> (especially Puzzles)</p>
+                            <p>As of July 2020, I really like Chess. Besides watching some games from Hikaru or Botez I also enjoy playing on <a href="https://www.chess.com" target="_blank" rel="noreferrer noopener" className="pretty-link">Chess.com</a> (especially Puzzles)</p>
                         </div>
                     </div>
                 </div>
