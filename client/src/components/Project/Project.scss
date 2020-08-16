@@ -9,10 +9,10 @@ $background:rgb(17, 17, 17);
     perspective: 600px;
     transition: .5s;
     &:hover .card-front {
-        transform: rotateX(-180deg);
+        transform: rotateY(-180deg);
     }
     &:hover .card-back {
-        transform: rotateX(0deg);
+        transform: rotateY(0deg);
     }
 
     font-family: 'Raleway', sans-serif;
@@ -27,7 +27,7 @@ $background:rgb(17, 17, 17);
         left: 0;
         background-color: $background;
         backface-visibility: hidden;
-        transform: rotateX(0deg);
+        transform: rotateY(0deg);
         transition: .5s;
     }
 
@@ -39,7 +39,7 @@ $background:rgb(17, 17, 17);
         left: 0;
         background-color: $background;
         backface-visibility: hidden;
-        transform: rotateX(180deg);
+        transform: rotateY(180deg);
         transition: .5s;
         color: #fff;
         text-align: center;

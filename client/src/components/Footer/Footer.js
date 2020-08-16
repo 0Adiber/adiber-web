@@ -18,25 +18,25 @@ class Footer extends Component {
                             <a className="footer-link" href="https://twitter.com/Aadiber" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon className="footer-icon" icon={faTwitter} />
                             </a>
-                            <span>Twitter</span>
+                            <span>@Aadiber</span>
                         </div>
                         <div className="footer-logo-wrapper">
                             <a className="footer-link" href="https://www.instagram.com/adib3r/" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon className="footer-icon" icon={faInstagram} />
                             </a>
-                            <span>Instagram</span>
+                            <span>@adib3r</span>
                         </div>
                         <div className="footer-logo-wrapper">
                             <a className="footer-link" href="https://discord.gg/7uFGcAE" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon className="footer-icon" icon={faDiscord} />
                             </a>
-                            <span>Discord</span>
+                            <span>@MurliGmbH</span>
                         </div>
                         <div className="footer-logo-wrapper">
                             <a className="footer-link" href="https://github.com/0Adiber" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon className="footer-icon" icon={faGithub} />
                             </a>
-                            <span>Github</span>
+                            <span>@0Adiber</span>
                         </div>
                     </div>
                 </div>
