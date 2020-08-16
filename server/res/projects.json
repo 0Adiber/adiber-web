@@ -26,10 +26,19 @@
             "github": "https://github.com/0Adiber/adiber-web"
         },
         {
+            "title": "Gomme-Stats-Api",
+            "image": "$HOST/images/gommestats.JPG",
+            "version": "1",
+            "description": "Unofficial Statistics API for GommeHD.net",
+            "language": "JS",
+            "github": "https://github.com/0Adiber/gomme-stats-api",
+            "docs": "https://github.com/0Adiber/gomme-stats-api"
+        },
+        {
             "title": "LobbySigns",
             "image": "$HOST/images/lobbysigns.jpg",
             "file": "$HOST/files/LobbySigns-v1.jar",
-            "version": 1.0,
+            "version": "1.0",
             "description": "Lets Players teleport between Server by clicking on a Sign.",
             "language": "Java",
             "github": "https://github.com/0Adiber/LobbySigns",
@@ -39,7 +48,7 @@
             "title": "BungeeChatFilter",
             "image": "$HOST/images/bungeechatfilter.jpg",
             "file": "$HOST/files/BungeeChatFilter-v1.jar",
-            "version": 1.0,
+            "version": "1.0",
             "description": "A Regex Chatfilter for Bungeecord Servers.",
             "language": "Java",
             "github": "https://github.com/0Adiber/BungeeChatFilter",
