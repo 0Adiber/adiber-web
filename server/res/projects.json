@@ -1,13 +1,21 @@
 {
     "items" : [
         {
-            "title": "Autoclicker",
-            "image": "$HOST/images/autoclicker.PNG",
-            "file": "https://github.com/weare-root/AutoClicker/releases/tag/1.0.0",
-            "version": "1.0.0",
-            "description": "High featured Autoclicker",
-            "language": "Go",
-            "github": "https://github.com/weare-root/AutoClicker"
+            "title": "Adiber-Web",
+            "image": "$HOST/images/adiber-web.jpg",
+            "version": "1.0",
+            "description": "My Website since 2019",
+            "language": "JS",
+            "github": "https://github.com/0Adiber/adiber-web"
+        },
+        {
+            "title": "MinecraftMovies",
+            "image": "$HOST/images/minecraftmovies.png",
+            "version": "1.0",
+            "description": "You may have a girlfriend - but I can watch movies in Minecraft",
+            "file": "https://github.com/0Adiber/MinecraftMovies/releases/tag/1.0",
+            "language": "Java",
+            "github": "https://github.com/0Adiber/MinecraftMovies"
         },
         {
             "title": "TuneZ",
@@ -18,12 +26,13 @@
             "github": "https://github.com/0Adiber/TuneZ"
         },
         {
-            "title": "Adiber-Web",
-            "image": "$HOST/images/adiber-web.jpg",
-            "version": "1.0",
-            "description": "My Website since 2019",
-            "language": "JS",
-            "github": "https://github.com/0Adiber/adiber-web"
+            "title": "Autoclicker",
+            "image": "$HOST/images/autoclicker.PNG",
+            "file": "https://github.com/weare-root/AutoClicker/releases/tag/1.0.0",
+            "version": "1.0.0",
+            "description": "High featured Autoclicker",
+            "language": "Go",
+            "github": "https://github.com/weare-root/AutoClicker"
         },
         {
             "title": "Gomme-Stats-Api",
