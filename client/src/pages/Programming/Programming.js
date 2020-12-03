@@ -19,7 +19,7 @@ class Programming extends Component {
                 isLoaded: false,
                 items: [],
             },
-            gitAlda: {
+            gitBeans: {
                 error: null,
                 isLoaded: false,
                 items: [],
@@ -66,13 +66,13 @@ class Programming extends Component {
                 }
             );
 
-        //fetch github alda
-        fetch(`${HOST}/gitalda`, { method: "GET" })
+        //fetch github beanboiz
+        fetch(`${HOST}/gitbeans`, { method: "GET" })
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
-                        gitAlda: {
+                        gitBeans: {
                             isLoaded: true,
                             items: result.items
                         }
@@ -80,7 +80,7 @@ class Programming extends Component {
                 },
                 (error) => {
                     this.setState({
-                        gitAlda: {
+                        gitBeans: {
                             isLoaded: true,
                             error
                         },
@@ -147,7 +147,7 @@ class Programming extends Component {
     }
 
     github(specific) {
-        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : specific === "root" ? this.state.gitRoot : this.state.gitAlda);
+        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : specific === "root" ? this.state.gitRoot : this.state.gitBeans);
         if(error) {
             return <div>Error: { error.message }</div>
         } else if(!isLoaded) {
@@ -215,13 +215,13 @@ class Programming extends Component {
                                 <div className="git-projects">{this.github("own")}</div>
                             </div>
                             <div className="inner-section">
+                                <h3>Organisation: Beanboiz</h3>
+                                <div className="git-projects">{this.github("beans")}</div>
+                            </div>    
+                            <div className="inner-section">
                                 <h3>Organisation: we-are-root</h3>
                                 <div className="git-projects">{this.github("root")}</div>
-                            </div>
-                            <div className="inner-section">
-                                <h3>Organisation: Alda-DHIF17</h3>
-                                <div className="git-projects">{this.github("alda")}</div>
-                            </div>                            
+                            </div>                
                         </div>
                     </div>
                     <div className="inner-content white">

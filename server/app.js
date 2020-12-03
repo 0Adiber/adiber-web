@@ -15,7 +15,7 @@ app.listen('33333', function(){
   //conToMysql();
   //first github get req
   fetchGithubOwn();
-  fetchGithubAlda();
+  fetchGithubBeanboiz();
   fetchGithubRoot();
   getProjectJson();
   getLanguages()
@@ -144,16 +144,16 @@ app.get('/gitweareroot', function(req, res) {
 */
 
 /*
-* GITHUB ALDA
+* GITHUB BEANS
 */
 
-let gitItemsAlda = {
+let gitItemsBeans = {
   items: []
 }
 
-function fetchGithubAlda() {
-  gitItemsAlda.items = [];
-  fetch("https://api.github.com/orgs/alda-dhif17/repos?type=all&direction=desc", { method: "GET" })
+function fetchGithubBeanboiz() {
+  gitItemsBeans.items = [];
+  fetch("https://api.github.com/orgs/B34nB01z/repos?type=all&direction=desc", { method: "GET" })
   .then(res => res.json())
   .then(
     (result) => {
@@ -163,7 +163,7 @@ function fetchGithubAlda() {
       gitTemp.temps = result;
       gitTemp.temps.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
       gitTemp.temps.map(t => {
-        gitItemsAlda.items.push({
+        gitItemsBeans.items.push({
           id: t.id,
           name: t.name,
           description: t.description,
@@ -177,27 +177,27 @@ function fetchGithubAlda() {
           size: t.size 
         });
       });
-      console.log("\nUpdated Github Alda Successfully!".blue);
+      console.log("\nUpdated Github Beanboiz Successfully!".blue);
     },
     (error) => {
-      gitItemsAlda.items = {error: error.message}
-      console.log(gitItemsAlda)
+      gitItemsBeans.items = {error: error.message}
+      console.log(gitItemsBeans)
     }
   );
 }
-//update github alda every 5 minutes
+//update github beans every 5 minutes
 setInterval(() => {
-  fetchGithubAlda();
+  fetchGithubBeanboiz();
 }, 5*60*1000); //== 5 min
 
 
 //get
-app.get('/gitalda', function(req, res) {
-  res.json(gitItemsAlda).end();
+app.get('/gitbeans', function(req, res) {
+  res.json(gitItemsBeans).end();
 });
 
 /*
-* Gitbut alda OVER
+* Gitbut beans OVER
 */
 
 /*
