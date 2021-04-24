@@ -72,10 +72,10 @@ class Home extends Component {
                             <p>Today's World is a fast changing World - So am I 😄. Some days I like to read for hours, others I don't. Then I just wanna program, while the next day I can't take a look at any code</p>
                             <h3>Programming</h3>
                             <p>As you probably guessed, I like programming. I find myself especially interested in working with other people's APIs</p>
+                            <h3>Cybersecurity</h3>
+                            <p>CTFing with <a href="https://github.com/B34nB01z" target="_blank" rel="noopener noreferrer" className="pretty-link">@Beanboiz</a> and <a href="https://hack.more.systems/" target="_blank" rel="noopener noreferrer" className="pretty-link">@LosFuzzys</a> - whilst always learning something new</p>
                             <h3>Gaming</h3>
                             <p>As your typical IT Guy, I also play some games. At the moment not really a lot of it, but there were times. My most favourite games are CS:GO, Rocket League and the all-time star Minecraft.</p>
-                            <h3>Else</h3>
-                            <p>There are things you just don't share with the public.</p>
                         </div>
                     </div>
                 </div>

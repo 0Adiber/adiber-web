@@ -18,21 +18,20 @@
             "github": "https://github.com/0Adiber/MinecraftMovies"
         },
         {
-            "title": "TuneZ",
-            "image": "$HOST/images/tunez.png",
-            "version": "1.0.0",
-            "description": "Exceptional Discord Music Bot",
-            "language": "NodeJS",
-            "github": "https://github.com/0Adiber/TuneZ"
+            "title": "TermFTP",
+            "image": "$HOST/images/termftp.png",
+            "version": "1",
+            "description": "A FTP + Terminal client built with Electron and Spring",
+            "language": "TS,Java",
+            "github": "https://github.com/TermFTP/"
         },
         {
-            "title": "Autoclicker",
-            "image": "$HOST/images/autoclicker.PNG",
-            "file": "https://github.com/weare-root/AutoClicker/releases/tag/1.0.0",
-            "version": "1.0.0",
-            "description": "High featured Autoclicker",
-            "language": "Go",
-            "github": "https://github.com/weare-root/AutoClicker"
+            "title": "Network Explorer",
+            "image": "$HOST/images/nwexp.png",
+            "version": "1",
+            "description": "Basically a NAS with an awesome web interface, running on your PC.",
+            "language": "TS,Java",
+            "github": "https://github.com/NetworkExplorer"
         },
         {
             "title": "Gomme-Stats-Api",
@@ -42,26 +41,6 @@
             "language": "JS",
             "github": "https://github.com/0Adiber/gomme-stats-api",
             "docs": "https://github.com/0Adiber/gomme-stats-api"
-        },
-        {
-            "title": "LobbySigns",
-            "image": "$HOST/images/lobbysigns.jpg",
-            "file": "$HOST/files/LobbySigns-v1.jar",
-            "version": "1.0",
-            "description": "Lets Players teleport between Server by clicking on a Sign.",
-            "language": "Java",
-            "github": "https://github.com/0Adiber/LobbySigns",
-            "docs": "https://www.spigotmc.org/resources/lobbysigns.80320/"
-        },
-        {
-            "title": "BungeeChatFilter",
-            "image": "$HOST/images/bungeechatfilter.jpg",
-            "file": "$HOST/files/BungeeChatFilter-v1.jar",
-            "version": "1.0",
-            "description": "A Regex Chatfilter for Bungeecord Servers.",
-            "language": "Java",
-            "github": "https://github.com/0Adiber/BungeeChatFilter",
-            "docs": "https://www.spigotmc.org/resources/bungeechatfilter.80365/"
         }
     ]
 }

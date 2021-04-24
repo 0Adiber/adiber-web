@@ -4,9 +4,6 @@ import $ from 'jquery';
 //CSS
 import './Programming.scss';
 
-//Header images
-import bgs from './img/HeaderImg';
-
 //configs
 var HOST = require('../../configs/host.json').host;
 
@@ -24,11 +21,6 @@ class Programming extends Component {
                 isLoaded: false,
                 items: [],
             },
-            gitRoot: {
-                error: null,
-                isLoaded: false,
-                items: [],
-            },
             languages: {
                 error: null,
                 isLoaded: false,
@@ -39,9 +31,8 @@ class Programming extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'white');
 
-        let path = Math.floor(Math.random()*bgs.length);
+        fetch(`${HOST}/apod`).then(res => res.json()).then(res => $("#header").css('background-image', 'url('+res.url+')'))
 
-        $("#header").css('background-image', 'url('+bgs[path]+')');
         $(window).scrollTop(0);
 
         //fetch github own
@@ -88,27 +79,6 @@ class Programming extends Component {
                 }
             );
 
-        fetch(`${HOST}/gitweareroot`, { method: "GET" })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        gitRoot: {
-                            isLoaded: true,
-                            items: result.items
-                        }
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        gitRoot: {
-                            isLoaded: true,
-                            error
-                        }
-                    })
-                }
-            )
-
         fetch(`${HOST}/languages`, { method: "GET" })
             .then(res => res.json())
             .then(
@@ -147,7 +117,7 @@ class Programming extends Component {
     }
 
     github(specific) {
-        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : specific === "root" ? this.state.gitRoot : this.state.gitBeans);
+        const {error, isLoaded, items} = (specific === "own" ? this.state.gitOwn : this.state.gitBeans);
         if(error) {
             return <div>Error: { error.message }</div>
         } else if(!isLoaded) {
@@ -158,12 +128,12 @@ class Programming extends Component {
                 <table className="git-table" id={"git-table-" + specific}>
                 <tbody>
                     <tr>
-                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Owner</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kB)</th>
+                        <th>Name</th><th>Description</th><th className="td-middle rez-rem">Owner</th><th className="th-min td-middle rez-rem">Created at</th><th className="th-min td-middle rez-rem">Last edit</th><th className="td-middle">Size(kB)</th><th className="td-middle">Stars</th>
                     </tr>
                     {items.map(item => (
                         <tr key={item.id}>
                             <td><a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a></td><td>{item.description}</td><td className="td-middle rez-rem">{item.owner.user}</td>
-                            <td className="td-middle rez-rem">{item.created_at.split("T")[0]}</td><td className="td-middle rez-rem">{item.updated_at.split("T")[0]}</td><td className="td-middle">{item.size}</td>
+                            <td className="td-middle rez-rem">{item.created_at.split("T")[0]}</td><td className="td-middle rez-rem">{item.updated_at.split("T")[0]}</td><td className="td-middle">{item.size}</td><td className="td-middle">{item.stars}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -217,16 +187,12 @@ class Programming extends Component {
                             <div className="inner-section">
                                 <h3>Organisation: Beanboiz</h3>
                                 <div className="git-projects">{this.github("beans")}</div>
-                            </div>    
-                            <div className="inner-section">
-                                <h3>Organisation: we-are-root</h3>
-                                <div className="git-projects">{this.github("root")}</div>
-                            </div>                
+                            </div>              
                         </div>
                     </div>
                     <div className="inner-content white">
                         <div className="content-wrap-in">
-                            <h2>Programming Languages I use</h2>
+                            <h2>Programming Languages I use daily</h2>
                             {this.languages()}
                         </div>
                     </div>

@@ -7,7 +7,7 @@
     padding: 20px;
     height: 100px;
     -webkit-transition: height ease-in-out 400ms;
-    transition: height ease-out 400ms, background-color ease 300ms;
+    transition: height ease-out 400ms;
     -webkit-transition-delay: 50ms;
     transition-delay: 50ms;
 }
