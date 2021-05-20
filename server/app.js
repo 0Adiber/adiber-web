@@ -1,11 +1,13 @@
-var express = require('express');
-var app = express();
-var colors = require('colors');
+import express from 'express';
+const app = express();
+import colors from 'colors';
+import imagemin from 'imagemin';
+import imageminWebp from 'imagemin-webp';
 
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 dotenv.config();
 
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 app.use(express.static('public'))
 
@@ -16,8 +18,6 @@ app.listen('33333', function(){
   //first github get req
   fetchGithubOwn();
   fetchGithubBeanboiz();
-  getProjectJson();
-  getLanguages();
   getAPOD();
 });
 
@@ -148,16 +148,7 @@ app.get('/gitbeans', function(req, res) {
 /*
 * Projects START
 */
-let projectsJson;
-//getting the downloads posts
-function getProjectJson() {
-  projectsJson = require('./res/projects.json')
-  console.log("\nUpdated Projects Successfully!".blue);
-}
-//update every 5 minutes
-setInterval(() => {
-  getProjectJson();
-}, 5*60*1000) //== 5 min
+import projectsJson from './res/projects.js'
 //get
 app.get('/projects', function(req, res) {
   res.json(projectsJson).end()
@@ -171,16 +162,7 @@ app.get('/projects', function(req, res) {
 /*
 * LANGUAGES START
 */
-let languagesJson;
-//getting the Languages
-function getLanguages() {
-  languagesJson = require('./res/languages.json')
-  console.log("\nUpdated Languages Successfully!".blue);
-}
-//update every 5 minutes
-setInterval(() => {
-  getLanguages();
-}, 5*60*1000) // == 5 min
+import languagesJson from './res/languages.js'
 //get
 app.get('/languages', function(req, res) {
   res.json(languagesJson).end()
@@ -210,12 +192,15 @@ function getAPOD() {
       if(item.media_type == 'image')
         cur = item.hdurl
     }
+
     fetch(cur)
       .then(res => res.buffer())
-      .then(buffer => {
-        nasaApod = "data:image/" + cur.split('.').pop() + ";base64," + buffer.toString('base64');
+      .then(async(buffer) => {
+        buffer = await imagemin.buffer(buffer, { plugins: [imageminWebp({quality: 80})]});
+        nasaApod = "data:image/webp;base64," + buffer.toString('base64');
         console.log("\nFetched APOD!".blue);
-      })
+      });
+
   });
 }
 
@@ -235,4 +220,4 @@ app.get('/apod', function(req, res) {
 * Nasa OVER
 */
 
-module.exports = app;
+export default app;
