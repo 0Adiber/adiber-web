@@ -205,11 +205,17 @@ function getAPOD() {
   fetch(`https://api.nasa.gov/planetary/apod?start_date=${start}&end_date=${end}&api_key=${process.env.NASA_API}`, { method: "GET" })
   .then(res => res.json())
   .then(res => {
+    let cur = "";
     for(const item of res) {
       if(item.media_type == 'image')
-        nasaApod = item.hdurl
+        cur = item.hdurl
     }
-    console.log("\nFetched APOD!".blue);
+    fetch(cur)
+      .then(res => res.buffer())
+      .then(buffer => {
+        nasaApod = "data:image/" + cur.split('.').pop() + ";base64," + buffer.toString('base64');
+        console.log("\nFetched APOD!".blue);
+      })
   });
 }
 
@@ -221,7 +227,7 @@ setInterval(() => {
 //get
 app.get('/apod', function(req, res) {
   res.json({
-    'url': nasaApod,
+    'data': nasaApod,
   }).end()
 })
 

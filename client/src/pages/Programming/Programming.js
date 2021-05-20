@@ -31,7 +31,7 @@ class Programming extends Component {
     componentDidMount() {
         $(".nav a").css('color', 'white');
 
-        fetch(`${HOST}/apod`).then(res => res.json()).then(res => $("#header").css('background-image', 'url('+res.url+')'))
+        fetch(`${HOST}/apod`).then(res => res.json()).then(res => $("#header").css('background-image', 'url('+res.data+')'))
 
         $(window).scrollTop(0);
 
