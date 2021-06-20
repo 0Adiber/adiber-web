@@ -32,7 +32,7 @@ class Home extends Component {
                     <div className="inner-content black">
                         <div className="content-wrap-in">
                             <h2>Who am I?</h2>
-                            <p>I am Adrian, a 17-year old student from Austria. Studying IT at the HTBLA Kaindorf</p>
+                            <p>I am Adrian, a 18-year old student from Austria. Studying IT at the HTBLA Kaindorf</p>
                         </div>
                     </div>
                     <div className="inner-content white">
