@@ -9,10 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Contact.css';
 
 //Images
-/*
-import instagram from './img/instagram.png';
-import discord from './img/discord.png';
-import github from './img/github.png';*/
 
 class Contact extends Component {
     componentDidMount() {
