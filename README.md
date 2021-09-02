@@ -8,25 +8,23 @@
  </p>
 
 ## About
-I started this Website as is back in 2019 👴🏻. Why did I stop? - Well, because I neither had the time nor the motivation. It is not finished yet, but as soon as I am able to continue, I will. I would really enjoy hearing your opinion or suggestions for improvement. 😁
+I started this Website as is back in 2019 👴🏻. A lot has changed in version 2. It is not finished yet, but it soon will be. I would really enjoy hearing your opinion or suggestions for improvement. 😁
 <br>Inspect the result on [Adiber.me](https://adiber.me)
 
 ## Languages
 - ReactJS - Frontend 🎨
-- ExpressJS - Backend 🧰
+- (ExpressJS - Backend 🧰)
 
 ## Idea
 ### Frontend
 The frontend does, what it usually does - it renders the Website for the User
 
 ### Backend
-Why a backend? - you ask. Well, because performance. I don't want to send requests to Github's API every time a user loads the page. And for the YouTube Data API this would not work, because after a bit of time the limit would be reached. Also I don't want the frontend to read files everytime a user visits my website, which is why I use the backend as an hourly updated cache.
-
-<br>**Important to note** is, that I started this back then, when I did't have a clue of React (=>explains the unconventional code) - I will refactor it at some point in the next few weeks
+Does not exist anymore, because I have no credits on Azure left :(
+(Why a backend? - you ask. Well, because performance. I don't want to send requests to Github's API every time a user loads the page. And for the YouTube Data API this would not work, because after a bit of time the limit would be reached. Also I don't want the frontend to read files everytime a user visits my website, which is why I use the backend as an hourly updated cache.)
 
 ## Info
 For (frontend-) deployment I used [Vercel](https://vercel.com/)
-<br>The (backend-) deployment is possible because of [Microsoft Azure's](https://azure.microsoft.com/de-de/free/students/) free 100$ credit with the [Github Student Pack](https://education.github.com/pack) => Here I have to use [UptimeRobot](https://uptimerobot.com/) to ping the Server periodically, so that it won't go to sleep.
 <br>I got my totally awesome domain free from [namecheap.com](https://namecheap.com) also because of the [Github Student Pack](https://education.github.com/pack)
 
 ## Todo
