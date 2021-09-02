@@ -35,7 +35,7 @@ export default {
         },
         {
             "title": "Gomme-Stats-Api",
-            "image": "/images/gommestats.JPG",
+            "image": "/images/gommestats.jpg",
             "version": "1",
             "description": "Unofficial Statistics API for GommeHD.net",
             "language": "JS",
