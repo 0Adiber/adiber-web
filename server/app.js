@@ -196,8 +196,9 @@ function getAPOD() {
     fetch(cur)
       .then(res => res.buffer())
       .then(async(buffer) => {
-        buffer = await imagemin.buffer(buffer, { plugins: [imageminWebp({quality: 80})]});
-        nasaApod = "data:image/webp;base64," + buffer.toString('base64');
+        //buffer = await imagemin.buffer(buffer, { plugins: [imageminWebp({quality: 80})]});
+        //nasaApod = "data:image/webp;base64," + buffer.toString('base64');
+        nasaApod = "data:image/" + cur.split('.').pop() + ";base64," + buffer.toString('base64');
         console.log("\nFetched APOD!".blue);
       });
 
